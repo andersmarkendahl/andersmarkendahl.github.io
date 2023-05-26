@@ -4,10 +4,10 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
         "airbnb",
-        "airbnb-typescript"
+        "airbnb-typescript",
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended"
     ],
     "overrides": [
     ],
@@ -23,6 +23,8 @@
         "react/prop-types": "off",
         // Allow css prop
         "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+        // Allow not using function component
+        "react/function-component-definition": "off",
         // Using named exports only (airbnb override)
         "import/prefer-default-export": "off",
         "import/no-default-export": "error"

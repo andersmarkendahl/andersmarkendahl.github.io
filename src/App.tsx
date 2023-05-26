@@ -1,9 +1,15 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/react';
+import { Footer } from './components/Footer';
 
-function App() {
+export const App = () => {
   return (
-    <h1>Hello React!</h1>
+    <div
+      css={{
+        position: 'fixed',
+      }}
+    >
+      <Footer />
+    </div>
   );
 }
-
-export default App;

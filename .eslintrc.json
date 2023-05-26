@@ -20,6 +20,11 @@
         "react"
     ],
     "rules": {
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        // Allow css prop
+        "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+        // Using named exports only (airbnb override)
+        "import/prefer-default-export": "off",
+        "import/no-default-export": "error"
     }
 }

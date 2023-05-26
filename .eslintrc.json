@@ -20,7 +20,9 @@
         "react"
     ],
     "rules": {
+        // Not using prop types
         "react/prop-types": "off",
+        "react/require-default-props": "off",
         // Allow css prop
         "react/no-unknown-property": ["error", { "ignore": ["css"] }],
         // Allow not using function component

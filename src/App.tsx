@@ -1,9 +1,17 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import { Footer } from './components/Footer';
+import { Footer } from './sections/Footer';
+import { Contact } from './sections/Contact';
 
 export const App = () => (
-  <div>
+  <div css={{
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}>
+    <div>
+      <Contact />
+    </div>
     <div css={{
         position: 'absolute',
         bottom: 0,

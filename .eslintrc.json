@@ -6,7 +6,6 @@
     "extends": [
         "airbnb",
         "airbnb-typescript",
-        "plugin:react/recommended",
         "plugin:@typescript-eslint/recommended"
     ],
     "overrides": [
@@ -17,7 +16,7 @@
         "project": ["./tsconfig.json"]
     },
     "plugins": [
-        "react"
+        "@typescript-eslint"
     ],
     "rules": {
         // Not using prop types

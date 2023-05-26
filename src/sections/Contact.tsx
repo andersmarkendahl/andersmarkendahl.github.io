@@ -23,25 +23,36 @@ const ContactItem = ({ icon, description, link = '' }: ContactItemProps) => (
   </Button>
 );
 
+const ContactList = () => {
+  const contactData: ContactItemProps[] = [
+    { icon: <Email />, description: 'andersmarkendahl@gmail.com' },
+    { icon: <LinkedIn />, description: 'LinkedIn Profile', link: 'https://www.linkedin.com/in/andersmarkendahl/' },
+    { icon: <LocationOn />, description: 'Uppsala, Sweden', link: 'https://goo.gl/maps/B54bUncus6tHotbj6/' },
+  ];
+
+  return (
+    <div>
+      {contactData.map((data) => (
+        <div>
+          <ContactItem
+            icon={data.icon}
+            description={data.description}
+            link={data.link}
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
 export const Contact = () => (
   <div>
-    <Typography variant="h4">
-      Contact me
-    </Typography>
-    <Divider orientation="horizontal" />
-    <ContactItem
-      icon={<Email />}
-      description="andersmarkendahl@gmail.com"
-    />
-    <ContactItem
-      icon={<LinkedIn />}
-      description="LinkedIn Profile"
-      link="https://www.linkedin.com/in/andersmarkendahl/"
-    />
-    <ContactItem
-      icon={<LocationOn />}
-      description="Uppsala, Sweden"
-      link="https://goo.gl/maps/B54bUncus6tHotbj6/"
-    />
+    <div css={{ marginBottom: '8px' }}>
+      <Typography variant="h4">
+        Contact me
+      </Typography>
+      <Divider orientation="horizontal" />
+    </div>
+    <ContactList />
   </div>
 );

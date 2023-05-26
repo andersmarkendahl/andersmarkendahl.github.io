@@ -8,17 +8,19 @@ export const App = () => (
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-  }}>
+    overflow: 'hidden',
+  }}
+  >
     <div>
       <Contact />
     </div>
     <div css={{
-        position: 'absolute',
-        bottom: 0,
-        width: '100%',
-        overflow: 'hidden',
-        marginBottom: '16px'
-      }}>
+      position: 'absolute',
+      bottom: 0,
+      width: '100%',
+      marginBottom: '16px',
+    }}
+    >
       <Footer />
     </div>
   </div>

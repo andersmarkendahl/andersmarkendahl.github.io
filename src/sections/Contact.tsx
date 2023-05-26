@@ -2,16 +2,14 @@
 import { jsx } from '@emotion/react';
 import {
   Divider,
-  Typography
+  Typography,
 } from '@mui/material';
 
-export const Contact = () => {
-  return (
-    <div>
-      <Typography variant="h4">
-        Contact me
-      </Typography>
-      <Divider orientation='horizontal' />
-    </div>
-  );
-};
+export const Contact = () => (
+  <div>
+    <Typography variant="h4">
+      Contact me
+    </Typography>
+    <Divider orientation="horizontal" />
+  </div>
+);

@@ -25,7 +25,7 @@ const GithubList = () => {
   return (
     <div>
       {githubData.map((data) => (
-        <div>
+        <div key={data.title}>
           <ProjectItem
             image={data.image}
             title={data.title}

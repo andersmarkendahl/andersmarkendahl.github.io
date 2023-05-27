@@ -33,7 +33,7 @@ const ContactList = () => {
   return (
     <div>
       {contactData.map((data) => (
-        <div>
+        <div key={data.description}>
           <ContactItem
             icon={data.icon}
             description={data.description}

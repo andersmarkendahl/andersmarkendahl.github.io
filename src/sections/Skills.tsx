@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import {
-  Button,
   ImageList,
   ImageListItem,
   Typography,
@@ -36,21 +35,19 @@ const skillsData = [
   },
 ];
 
-const SkillList = () => {
-  return (
-    <ImageList variant='masonry' sx={{ width: 600, height: 500 }} cols={3} gap={32}>
-      {skillsData.map((item) => (
-        <ImageListItem key={item.title}>
-          <img
-            src={item.img}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
-  );
-};
+const SkillList = () => (
+  <ImageList variant="masonry" sx={{ width: 600, height: 500 }} cols={3} gap={32}>
+    {skillsData.map((item) => (
+      <ImageListItem key={item.title}>
+        <img
+          src={item.img}
+          alt={item.title}
+          loading="lazy"
+        />
+      </ImageListItem>
+    ))}
+  </ImageList>
+);
 
 export const Skills = () => (
   <div>

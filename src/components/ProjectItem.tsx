@@ -22,7 +22,7 @@ export const ProjectItem = ({
     }}
     >
       <img alt={alt} src={image} width="80px" />
-      <div css={{ display: 'block' }}>
+      <div css={{ display: 'block', paddingLeft: '16px' }}>
         <Typography variant="h5">
           {title}
         </Typography>

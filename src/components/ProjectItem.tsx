@@ -5,7 +5,7 @@ import {
   Typography,
 } from '@mui/material';
 
-interface ProjectItemProps {
+export interface ProjectItemProps {
   image: string;
   title: string;
   description: string;

@@ -5,6 +5,7 @@ import { Footer } from './sections/Footer';
 import { Contact } from './sections/Contact';
 import { Server } from './sections/Server';
 import { Github } from './sections/Github';
+import { Skills } from './sections/Skills';
 
 export const App = () => (
   <div css={{
@@ -15,6 +16,7 @@ export const App = () => (
   }}
   >
     <Stack spacing={8}>
+      <Skills />
       <Github />
       <Server />
       <Contact />

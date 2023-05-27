@@ -1,10 +1,13 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import {
+  IconButton,
   ImageList,
   ImageListItem,
+  ImageListItemBar,
   Typography,
 } from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
 import { SectionHeader } from '../components/SectionHeader';
 import cicdImg from './cicd.png';
 import programImg from './programming.png';
@@ -15,34 +18,48 @@ import agileImg from './agile.png';
 const skillsData = [
   {
     img: cicdImg,
-    title: 'Continous Integration and Continous Deployment',
+    title: 'CICD',
+    subtitle: 'Continous Integration and Continous Deployment',
   },
   {
     img: programImg,
-    title: 'Programming',
+    title: 'Coding',
+    subtitle: 'Programming languages',
   },
   {
     img: linuxImg,
-    title: 'Linux and Linux distributions',
+    title: 'Linux',
+    subtitle: 'Linux and Linux distributions',
   },
   {
     img: iplbImg,
-    title: 'IP Networking, Connectivity and Loadbalancing',
+    title: 'Networks',
+    subtitle: 'IP Networking, Connectivity and Loadbalancing',
   },
   {
     img: agileImg,
-    title: 'Agile methodologies',
+    title: 'Agile',
+    subtitle: 'Agile methodologies and roles',
   },
 ];
 
 const SkillList = () => (
-  <ImageList variant="masonry" sx={{ width: 600, height: 500 }} cols={3} gap={32}>
+  <ImageList sx={{ width: 800, height: 600 }} cols={3} gap={32}>
     {skillsData.map((item) => (
       <ImageListItem key={item.title}>
         <img
           src={item.img}
           alt={item.title}
           loading="lazy"
+        />
+        <ImageListItemBar
+          title={item.title}
+          subtitle={item.subtitle}
+          actionIcon={
+            <IconButton>
+              <InfoIcon />
+            </IconButton>
+          }
         />
       </ImageListItem>
     ))}

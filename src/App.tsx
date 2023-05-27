@@ -20,15 +20,7 @@ export const App = () => (
       <Github />
       <Server />
       <Contact />
-    </Stack>
-    <div css={{
-      position: 'absolute',
-      bottom: 0,
-      width: '100%',
-      marginBottom: '16px',
-    }}
-    >
       <Footer />
-    </div>
+    </Stack>
   </div>
 );

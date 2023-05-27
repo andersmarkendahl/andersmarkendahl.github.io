@@ -2,6 +2,8 @@
 import { jsx } from '@emotion/react';
 import { Footer } from './sections/Footer';
 import { Contact } from './sections/Contact';
+import { Server } from './sections/Server';
+import Stack from '@mui/material/Stack';
 
 export const App = () => (
   <div css={{
@@ -11,9 +13,10 @@ export const App = () => (
     overflow: 'hidden',
   }}
   >
-    <div>
+    <Stack spacing={8}>
+      <Server />
       <Contact />
-    </div>
+    </Stack>
     <div css={{
       position: 'absolute',
       bottom: 0,

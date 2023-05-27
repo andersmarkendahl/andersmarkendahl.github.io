@@ -12,10 +12,10 @@ interface Props {
 export const SectionHeader = ({
   title,
 }: Props) => (
-  <div css={{ marginBottom: '8px' }}>
+  <div css={{ marginBottom: '8px', maxWidth: '200px' }}>
     <Typography variant="h4">
       {title}
     </Typography>
-    <Divider orientation="horizontal" />
+    <Divider sx={{ borderColor: 'dimgray', width: '100%' }} orientation="horizontal" />
   </div>
 );

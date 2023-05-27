@@ -13,6 +13,7 @@ export const App = () => (
     alignItems: 'center',
     justifyContent: 'center',
     overflow: 'hidden',
+    color: 'white',
   }}
   >
     <Stack spacing={8}>

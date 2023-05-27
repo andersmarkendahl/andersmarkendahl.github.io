@@ -55,11 +55,11 @@ const SkillList = () => (
         <ImageListItemBar
           title={item.title}
           subtitle={item.subtitle}
-          actionIcon={
+          actionIcon={(
             <IconButton>
               <InfoIcon />
             </IconButton>
-          }
+          )}
         />
       </ImageListItem>
     ))}

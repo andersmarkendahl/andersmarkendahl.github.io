@@ -25,6 +25,7 @@
     "webpack-dev-server": "^4.15.0"
   },
   "scripts": {
+    "lint": "npx eslint src/*",
     "test": "echo \"ERROR: No tests\" && exit 1",
     "start": "webpack serve --port 3000",
     "build": "NODE_ENV=production webpack"

@@ -2,14 +2,13 @@
 import { jsx } from '@emotion/react';
 import {
   Button,
-  Divider,
-  Typography,
 } from '@mui/material';
 import {
   Email,
   LinkedIn,
   LocationOn,
 } from '@mui/icons-material';
+import { SectionHeader } from '../components/SectionHeader';
 
 interface ContactItemProps {
   icon: React.ReactNode;
@@ -47,12 +46,7 @@ const ContactList = () => {
 
 export const Contact = () => (
   <div>
-    <div css={{ marginBottom: '8px' }}>
-      <Typography variant="h4">
-        Contact me
-      </Typography>
-      <Divider orientation="horizontal" />
-    </div>
+    <SectionHeader title="Contact me" />
     <ContactList />
   </div>
 );

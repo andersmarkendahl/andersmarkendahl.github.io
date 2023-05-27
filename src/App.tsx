@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
+import Stack from '@mui/material/Stack';
 import { Footer } from './sections/Footer';
 import { Contact } from './sections/Contact';
 import { Server } from './sections/Server';
-import Stack from '@mui/material/Stack';
 
 export const App = () => (
   <div css={{

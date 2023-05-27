@@ -1,11 +1,11 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import {
-  Divider,
   Link,
   Typography,
 } from '@mui/material';
 import { ProjectItem, ProjectItemProps } from '../components/ProjectItem';
+import { SectionHeader } from '../components/SectionHeader';
 import satellitImg from './satellit.png';
 import goStarSimImg from './gostarsim.png';
 import goBallSimImg from './goballsim.png';
@@ -40,12 +40,7 @@ const GithubList = () => {
 };
 export const Github = () => (
   <div>
-    <div css={{ marginBottom: '8px' }}>
-      <Typography variant="h4">
-        My Github
-      </Typography>
-      <Divider orientation="horizontal" />
-    </div>
+    <SectionHeader title="My Github" />
     <Typography variant="body1">
       A list of personal software projects, also linked on my
       <Link variant="inherit" underline="hover" href="https://github.com/andersmarkendahl/"> Github Profile</Link>

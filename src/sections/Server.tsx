@@ -1,40 +1,11 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
 import {
-  Button,
   Divider,
   Typography,
 } from '@mui/material';
+import { ProjectItem } from '../components/ProjectItem';
 import serverImg from './server.png';
-
-interface ProjectItemProps {
-  image: string;
-  title: string;
-  description: string;
-  link: string;
-  alt: string;
-}
-
-const ProjectItem = ({
-  image, title, description, link, alt,
-}: ProjectItemProps) => (
-  <Button sx={{ textAlign: 'left', textTransform: 'none' }} href={link} color="inherit">
-    <div css={{
-      padding: '4px', display: 'flex', alignItems: 'top', justifyContent: 'left',
-    }}
-    >
-      <img alt={alt} src={image} width="80px" />
-      <div css={{ display: 'block' }}>
-        <Typography variant="h5">
-          {title}
-        </Typography>
-        <Typography variant="body1">
-          {description}
-        </Typography>
-      </div>
-    </div>
-  </Button>
-);
 
 export const Server = () => (
   <div>

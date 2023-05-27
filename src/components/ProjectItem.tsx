@@ -5,7 +5,7 @@ import {
   Typography,
 } from '@mui/material';
 
-export interface ProjectItemProps {
+export interface Props {
   image: string;
   title: string;
   description: string;
@@ -15,7 +15,7 @@ export interface ProjectItemProps {
 
 export const ProjectItem = ({
   image, title, description, link, alt,
-}: ProjectItemProps) => (
+}: Props) => (
   <Button sx={{ textAlign: 'left', textTransform: 'none' }} href={link} color="inherit">
     <div css={{
       padding: '4px', display: 'flex', alignItems: 'top', justifyContent: 'left',

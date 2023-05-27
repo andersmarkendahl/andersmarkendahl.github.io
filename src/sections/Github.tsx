@@ -4,7 +4,7 @@ import {
   Link,
   Typography,
 } from '@mui/material';
-import { ProjectItem, ProjectItemProps } from '../components/ProjectItem';
+import { ProjectItem, Props as ProjectItemProps } from '../components/ProjectItem';
 import { SectionHeader } from '../components/SectionHeader';
 import satellitImg from './satellit.png';
 import goStarSimImg from './gostarsim.png';

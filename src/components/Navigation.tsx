@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { jsx } from '@emotion/react';
 import {
   BottomNavigation,
@@ -17,7 +17,10 @@ export const Navigation = () => {
   const [value, setValue] = useState(0);
 
   return (
-    <div css={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
+    <div css={{
+      position: 'fixed', bottom: 0, left: 0, right: 0,
+    }}
+    >
       <BottomNavigation
         showLabels
         value={value}
@@ -32,5 +35,5 @@ export const Navigation = () => {
         <BottomNavigationAction label="Contact" icon={<ContactIcon />} />
       </BottomNavigation>
     </div>
-  )
+  );
 };

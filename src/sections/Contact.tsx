@@ -46,7 +46,7 @@ const ContactList = () => {
 
 export const Contact = () => (
   <div>
-    <SectionHeader title="Contact me" />
+    <SectionHeader title="Contact Me" />
     <ContactList />
   </div>
 );

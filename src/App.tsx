@@ -1,6 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
-import Stack from '@mui/material/Stack';
+import {
+  Stack,
+  Typography,
+} from '@mui/material';
 import { Footer } from './sections/Footer';
 import { Contact } from './sections/Contact';
 import { Server } from './sections/Server';
@@ -18,6 +21,9 @@ export const App = () => (
   }}
   >
     <Stack spacing={8}>
+      <div css={{ margin: '16px' }}>
+        <Typography variant='h2' align='center'>I'm Anders Markendahl</Typography>
+      </div>
       <Myself />
       <Skills />
       <Github />

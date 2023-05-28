@@ -7,7 +7,7 @@ import {
   ImageListItemBar,
   Typography,
 } from '@mui/material';
-import InfoIcon from '@mui/icons-material/Info';
+import LaunchIcon from '@mui/icons-material/Launch';
 import { SectionHeader } from '../components/SectionHeader';
 import cicdImg from './images/cicd.png';
 import programImg from './images/programming.png';
@@ -58,7 +58,7 @@ const SkillList = () => (
           subtitle={item.subtitle}
           actionIcon={(
             <IconButton color="primary">
-              <InfoIcon fontSize="large" />
+              <LaunchIcon fontSize="large" />
             </IconButton>
           )}
         />

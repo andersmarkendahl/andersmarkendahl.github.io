@@ -9,6 +9,7 @@ import {
   ThemeOptions,
 } from '@mui/material';
 
+import { Navigation } from './components/Navigation';
 import { Footer } from './sections/Footer';
 import { Contact } from './sections/Contact';
 import { Server } from './sections/Server';
@@ -63,6 +64,7 @@ export const App = () => (
         <Contact />
         <Footer />
       </Stack>
+      <Navigation />
     </div>
   </ThemeProvider>
 );

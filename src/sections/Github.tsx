@@ -10,13 +10,16 @@ import { SectionHeader } from '../components/SectionHeader';
 const GithubList = () => {
   const githubData: ProjectItemProps[] = [
     {
-      icon: 'rocket_launch', title: 'Satellit', description: 'Space arcade game for Linux. C, SDL2.0, CUnit, DoxyGen', link: 'https://github.com/andersmarkendahl/satellit',
+      icon: 'space_dashboard_icon', title: 'This webpage', description: 'Personal webpage. React 18 on typescript, Material UI, Gatsby', link: 'https://github.com/andersmarkendahl/andersmarkendahl.github.io',
     },
     {
       icon: 'auto_awesome', title: 'Go-Star-Sim', description: 'Starsystem simulation. Golang, N-body problem, go-routines, CircleCI', link: 'https://github.com/andersmarkendahl/go-star-sim ',
     },
     {
       icon: 'sports_basketball', title: 'Go-Ball-Sim', description: 'Ball simulation. Golang, Golang test package, Jenkins', link: 'https://github.com/andersmarkendahl/go-ball-sim',
+    },
+    {
+      icon: 'rocket_launch', title: 'Satellit', description: 'Space arcade game for Linux. C, SDL2.0, CUnit, DoxyGen', link: 'https://github.com/andersmarkendahl/satellit',
     },
   ];
   return (

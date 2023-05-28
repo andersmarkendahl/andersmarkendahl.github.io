@@ -4,12 +4,12 @@ import {
   Typography,
 } from '@mui/material';
 import { SectionHeader } from '../components/SectionHeader';
-import profileImg from './images/profile.png'
+import profileImg from './images/profile.png';
 
 export const Myself = () => (
   <div>
     <SectionHeader title="About Me" />
-    <div css={{ display: 'flex' }} >
+    <div css={{ display: 'flex' }}>
       <div>
         <Typography sx={{ marginBottom: '8px' }} variant="body1">
           My name is Anders Markendahl and I live in Uppsala, Sweden, with my wife and three kids.
@@ -25,13 +25,13 @@ export const Myself = () => (
           experienced in leading a team of developers and working according to Agile workflows.
         </Typography>
         <Typography sx={{ marginBottom: '8px' }} variant="body1">
-          In my spare time I usually play around with some coding projects, some of them you can find
-          referenced in this homepage.
+          In my spare time I usually play around with some coding projects, some of them you can
+          find referenced in this homepage.
         </Typography>
       </div>
       <div>
-        <img src={profileImg} alt='Anders profile' width={300}/>
+        <img src={profileImg} alt="Anders profile" width={300} />
       </div>
-      </div>
+    </div>
   </div>
 );

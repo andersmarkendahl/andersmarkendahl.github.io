@@ -2,26 +2,26 @@
 import { jsx } from '@emotion/react';
 import {
   Button,
+  Icon,
   Typography,
 } from '@mui/material';
 
 export interface Props {
-  image: string;
+  icon: string;
   title: string;
   description: string;
   link: string;
-  alt: string;
 }
 
 export const ProjectItem = ({
-  image, title, description, link, alt,
+  icon, title, description, link,
 }: Props) => (
   <Button sx={{ textAlign: 'left' }} href={link}>
     <div css={{
-      padding: '4px', display: 'flex', alignItems: 'top', justifyContent: 'left',
+      padding: '4px', display: 'flex', alignItems: 'center', justifyContent: 'left',
     }}
     >
-      <img alt={alt} src={image} width="80px" />
+      <Icon sx={{ fontSize: 56 }}>{icon}</Icon>
       <div css={{ display: 'block', paddingLeft: '16px' }}>
         <Typography variant="h5">
           {title}

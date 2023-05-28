@@ -6,20 +6,17 @@ import {
 } from '@mui/material';
 import { ProjectItem, Props as ProjectItemProps } from '../components/ProjectItem';
 import { SectionHeader } from '../components/SectionHeader';
-import satellitImg from './images/satellit.png';
-import goStarSimImg from './images/gostarsim.png';
-import goBallSimImg from './images/goballsim.png';
 
 const GithubList = () => {
   const githubData: ProjectItemProps[] = [
     {
-      image: satellitImg, title: 'Satellit', description: 'Space arcade game for Linux. C, SDL2.0, CUnit, DoxyGen', link: 'https://github.com/andersmarkendahl/satellit', alt: 'Satellit',
+      icon: 'rocket_launch', title: 'Satellit', description: 'Space arcade game for Linux. C, SDL2.0, CUnit, DoxyGen', link: 'https://github.com/andersmarkendahl/satellit',
     },
     {
-      image: goStarSimImg, title: 'Go-Star-Sim', description: 'Starsystem simulation. Golang, N-body problem, go-routines, CircleCI', link: 'https://github.com/andersmarkendahl/go-star-sim ', alt: 'Starsystem simulation',
+      icon: 'auto_awesome', title: 'Go-Star-Sim', description: 'Starsystem simulation. Golang, N-body problem, go-routines, CircleCI', link: 'https://github.com/andersmarkendahl/go-star-sim ',
     },
     {
-      image: goBallSimImg, title: 'Go-Ball-Sim', description: 'Ball simulation. Golang, Golang test package, Jenkins', link: 'https://github.com/andersmarkendahl/go-ball-sim', alt: 'Ball',
+      icon: 'sports_basketball', title: 'Go-Ball-Sim', description: 'Ball simulation. Golang, Golang test package, Jenkins', link: 'https://github.com/andersmarkendahl/go-ball-sim',
     },
   ];
   return (
@@ -27,11 +24,10 @@ const GithubList = () => {
       {githubData.map((data) => (
         <div key={data.title}>
           <ProjectItem
-            image={data.image}
+            icon={data.icon}
             title={data.title}
             description={data.description}
             link={data.link}
-            alt={data.alt}
           />
         </div>
       ))}

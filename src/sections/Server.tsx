@@ -5,7 +5,6 @@ import {
 } from '@mui/material';
 import { ProjectItem } from '../components/ProjectItem';
 import { SectionHeader } from '../components/SectionHeader';
-import serverImg from './images/server.png';
 
 export const Server = () => (
   <div>
@@ -16,6 +15,6 @@ export const Server = () => (
       various games such as Terraria, Minecraft, Starbound and Half-Life
       1 and 2 etc.
     </Typography>
-    <ProjectItem image={serverImg} title="Server" description="Hosted Ubuntu Server, Apache, MySQL" link="" alt="" />
+    <ProjectItem icon="storage" title="Server" description="Hosted Ubuntu Server, Apache, MySQL" link="" />
   </div>
 );

@@ -16,6 +16,6 @@ export const SectionHeader = ({
     <Typography variant="h4">
       {title}
     </Typography>
-    <Divider sx={{ borderColor: 'dimgray', width: '100%' }} orientation="horizontal" />
+    <Divider sx={{ width: '100%', borderBottomWidth: 4 }} orientation="horizontal" />
   </div>
 );

@@ -46,7 +46,7 @@ const skillsData = [
 const SkillList = () => (
   <ImageList sx={{ width: 800, height: 600 }} cols={3} gap={32}>
     {skillsData.map((item) => (
-      <ImageListItem key={item.title}>
+      <ImageListItem sx={{ opacity: 0.5 }}key={item.title}>
         <img
           src={item.img}
           alt={item.title}
@@ -56,8 +56,8 @@ const SkillList = () => (
           title={item.title}
           subtitle={item.subtitle}
           actionIcon={(
-            <IconButton>
-              <InfoIcon />
+            <IconButton color='primary'>
+              <InfoIcon fontSize='large' />
             </IconButton>
           )}
         />

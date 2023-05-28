@@ -30,7 +30,7 @@ const themeOptions: ThemeOptions = {
     text: {
       primary: '#ece5d3',
     },
-    divider: '#b9b09f',
+    divider: '#56564c',
   },
 };
 

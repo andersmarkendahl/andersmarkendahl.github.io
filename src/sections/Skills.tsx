@@ -9,11 +9,11 @@ import {
 } from '@mui/material';
 import InfoIcon from '@mui/icons-material/Info';
 import { SectionHeader } from '../components/SectionHeader';
-import cicdImg from './cicd.png';
-import programImg from './programming.png';
-import linuxImg from './linux.png';
-import iplbImg from './iplb.png';
-import agileImg from './agile.png';
+import cicdImg from './images/cicd.png';
+import programImg from './images/programming.png';
+import linuxImg from './images/linux.png';
+import iplbImg from './images/iplb.png';
+import agileImg from './images/agile.png';
 
 const skillsData = [
   {

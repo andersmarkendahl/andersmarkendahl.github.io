@@ -6,9 +6,9 @@ import {
 } from '@mui/material';
 import { ProjectItem, Props as ProjectItemProps } from '../components/ProjectItem';
 import { SectionHeader } from '../components/SectionHeader';
-import satellitImg from './satellit.png';
-import goStarSimImg from './gostarsim.png';
-import goBallSimImg from './goballsim.png';
+import satellitImg from './images/satellit.png';
+import goStarSimImg from './images/gostarsim.png';
+import goBallSimImg from './images/goballsim.png';
 
 const GithubList = () => {
   const githubData: ProjectItemProps[] = [

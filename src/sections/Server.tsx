@@ -5,8 +5,7 @@ import {
 } from '@mui/material';
 import { ProjectItem } from '../components/ProjectItem';
 import { SectionHeader } from '../components/SectionHeader';
-
-import serverImg from './server.png';
+import serverImg from './images/server.png';
 
 export const Server = () => (
   <div>

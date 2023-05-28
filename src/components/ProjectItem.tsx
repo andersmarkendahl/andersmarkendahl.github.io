@@ -16,7 +16,7 @@ export interface Props {
 export const ProjectItem = ({
   icon, title, description, link,
 }: Props) => (
-  <Button sx={{ textAlign: 'left' }} href={link}>
+  <Button sx={{ textAlign: 'left', textTransform: 'none' }} href={link}>
     <div css={{
       padding: '4px', display: 'flex', alignItems: 'center', justifyContent: 'left',
     }}

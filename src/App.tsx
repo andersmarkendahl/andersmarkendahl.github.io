@@ -31,6 +31,11 @@ const themeOptions: ThemeOptions = {
       primary: '#ece5d3',
     },
     divider: '#56564c',
+    action: {
+      hover: '#b9b09f',
+      hoverOpacity: 0.3,
+      disabled: '#56564c',
+    },
   },
 };
 

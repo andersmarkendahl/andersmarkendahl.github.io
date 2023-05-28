@@ -51,7 +51,7 @@ const SkillList = () => (
           src={item.img}
           alt={item.title}
           loading="lazy"
-          
+
         />
         <ImageListItemBar
           title={item.title}

@@ -13,6 +13,7 @@ import {
   Storage as ServerIcon,
   Mail as ContactIcon,
 } from '@mui/icons-material';
+import { Theme } from './Theme';
 
 interface Props {
   section: string,
@@ -32,13 +33,14 @@ const NavItem = ({ section, description, icon }: Props) => {
 };
 
 export const Navigation = () => {
-  const navStyle = { padding: '4px', fontSize: '48px' };
+  const navColor = Theme.palette.background.paper;
+  const iconStyle = { padding: '4px', fontSize: '48px' };
   const navigationData: Props[] = [
-    { section: 'home', description: 'About Me', icon: <HomeIcon sx={navStyle} /> },
-    { section: 'skills', description: 'My Skills', icon: <SkillsIcon sx={navStyle} /> },
-    { section: 'projects', description: 'My Github', icon: <ProjectIcon sx={navStyle} /> },
-    { section: 'server', description: 'My Server', icon: <ServerIcon sx={navStyle} /> },
-    { section: 'contact', description: 'Contact Me', icon: <ContactIcon sx={navStyle} /> },
+    { section: 'home', description: 'About Me', icon: <HomeIcon sx={iconStyle} /> },
+    { section: 'skills', description: 'My Skills', icon: <SkillsIcon sx={iconStyle} /> },
+    { section: 'projects', description: 'My Github', icon: <ProjectIcon sx={iconStyle} /> },
+    { section: 'server', description: 'My Server', icon: <ServerIcon sx={iconStyle} /> },
+    { section: 'contact', description: 'Contact Me', icon: <ContactIcon sx={iconStyle} /> },
   ];
 
   return (
@@ -47,7 +49,7 @@ export const Navigation = () => {
       bottom: 0,
       left: 0,
       right: 0,
-      backgroundColor: 'ActiveBorder',
+      backgroundColor: navColor,
       display: 'flex',
       justifyContent: 'center',
     }}

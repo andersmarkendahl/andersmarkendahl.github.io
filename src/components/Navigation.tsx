@@ -1,7 +1,9 @@
 /** @jsx jsx */
+import { ReactNode } from 'react';
 import { jsx } from '@emotion/react';
 import {
   Button,
+  Tooltip,
 } from '@mui/material';
 import {
   Home as HomeIcon,
@@ -10,6 +12,18 @@ import {
   Storage as ServerIcon,
   Mail as ContactIcon,
 } from '@mui/icons-material';
+
+interface Props {
+  section: string,
+  icon: ReactNode,
+}
+
+const NavItem = ({ section, icon }: Props) => {
+  const href = `#${section}`;
+  return (
+    <Button sx={{ fontSize: 36 }} size="large" href={href}>{icon}</Button>
+  );
+};
 
 export const Navigation = () => (
   <div css={{
@@ -23,10 +37,10 @@ export const Navigation = () => (
     justifyContent: 'center',
   }}
   >
-    <Button size="large" href="#home"><HomeIcon sx={{ fontSize: 36 }} /></Button>
-    <Button size="large" href="#about"><AboutIcon sx={{ fontSize: 36 }} /></Button>
-    <Button size="large" href="#projects"><ProjectIcon sx={{ fontSize: 36 }} /></Button>
-    <Button size="large" href="#server"><ServerIcon sx={{ fontSize: 36 }} /></Button>
-    <Button size="large" href="#contact"><ContactIcon sx={{ fontSize: 36 }} /></Button>
+    <NavItem section="home" icon={<HomeIcon />} />
+    <NavItem section="about" icon={<AboutIcon />} />
+    <NavItem section="projects" icon={<ProjectIcon />} />
+    <NavItem section="server" icon={<ServerIcon />} />
+    <NavItem section="contact" icon={<ContactIcon />} />
   </div>
 );

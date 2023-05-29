@@ -5,8 +5,7 @@ import {
   Typography,
 } from '@mui/material';
 import { ProjectItem, Props as ProjectItemProps } from '../components/ProjectItem';
-import { SectionHeader } from '../components/SectionHeader';
-import { SectionProps } from '../components/SectionProps';
+import { Section } from '../components/Section';
 
 const GithubList = () => {
   const githubData: ProjectItemProps[] = [
@@ -38,17 +37,19 @@ const GithubList = () => {
     </div>
   );
 };
-export const Github = ({ id }: SectionProps) => (
-  <div id={id}>
-    <div css={{ marginBottom: '8px' }}>
-      <SectionHeader title="My Github" />
-      <Typography variant="body1">
-        A list of personal software projects, also linked on my
-        <Link variant="inherit" underline="hover" href="https://github.com/andersmarkendahl/"> Github Profile</Link>
-        .
-        These projects are mainly for educational purposes in a wide range of topics.
-      </Typography>
-    </div>
+
+const Content = () => (
+  <div>
+    <Typography variant="body1">
+      A list of personal software projects, also linked on my
+      <Link variant="inherit" underline="hover" href="https://github.com/andersmarkendahl/"> Github Profile</Link>
+      .
+      These projects are mainly for educational purposes in a wide range of topics.
+    </Typography>
     <GithubList />
   </div>
+);
+
+export const Github = ({ id }: { id: string }) => (
+  <Section id={id} title="My Github"><Content /></Section>
 );

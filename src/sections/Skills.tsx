@@ -8,13 +8,12 @@ import {
   Typography,
 } from '@mui/material';
 import LaunchIcon from '@mui/icons-material/Launch';
-import { SectionHeader } from '../components/SectionHeader';
 import cicdImg from './images/cicd.png';
 import programImg from './images/programming.png';
 import linuxImg from './images/linux.png';
 import iplbImg from './images/iplb.png';
 import agileImg from './images/agile.png';
-import { SectionProps } from '../components/SectionProps';
+import { Section } from '../components/Section';
 
 const skillsData = [
   {
@@ -68,12 +67,15 @@ const SkillList = () => (
   </ImageList>
 );
 
-export const Skills = ({ id }: SectionProps) => (
-  <div id={id}>
-    <SectionHeader title="My Skills" />
+export const Content = () => (
+  <div>
     <Typography variant="body1">
       A list of skills and topics that I have learned during my time in software development
     </Typography>
     <SkillList />
   </div>
+);
+
+export const Skills = ({ id }: { id: string }) => (
+  <Section id={id} title="My Skills"><Content /></Section>
 );

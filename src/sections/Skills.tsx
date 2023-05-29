@@ -64,23 +64,24 @@ interface ModalContentProps {
 
 const ModalContent = ({ img, title, description }: ModalContentProps) => (
   <div css={{
-    display: 'flex',
-    gap: '16px',
     justifyContent: 'center',
     alignItems: 'center',
-    top: '25%',
-    left: '25%',
-    width: '700px',
+    textAlign: 'center',
+    width: '600px',
     backgroundColor: '#1f1f1e',
     border: '2px solid #fff',
-    padding: '16px',
+    borderColor: '#b9b09f',
+    borderRadius: '16px',
+    padding: '32px',
   }}
   >
-    <img src={img} alt={title} loading="lazy" />
-    <Typography>
+    <div css={{ marginBottom: '32px' }}>
+      <img src={img} alt={title} loading="lazy" />
+    </div>
+    <Typography variant="h5">
       {title}
-      :
-      {' '}
+    </Typography>
+    <Typography>
       {description}
     </Typography>
   </div>
@@ -110,7 +111,21 @@ const SkillList = () => {
             )}
           />
           {selectedImage === item && (
-            <Modal open onClose={handleClose}>
+            <Modal
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: '#03030080',
+              }}
+              open
+              onClose={handleClose}
+              slotProps={{
+                backdrop: {
+                  timeout: 500,
+                },
+              }}
+            >
               <ModalContent img={item.img} title={item.subtitle} description={item.description} />
             </Modal>
           )}

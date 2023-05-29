@@ -17,7 +17,13 @@ import linuxImg from './images/linux.png';
 import iplbImg from './images/iplb.png';
 import agileImg from './images/agile.png';
 
-const skillsData = [
+interface SkillItem {
+  title: string;
+  subtitle: string;
+  img: string;
+  description: string;
+}
+const skillsData: SkillItem[] = [
   {
     img: cicdImg,
     title: 'CICD',
@@ -81,33 +87,33 @@ const ModalContent = ({ img, title, description }: ModalContentProps) => (
 );
 
 const SkillList = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const [selectedImage, setSelectedImage] = useState<SkillItem | null>(null);
+  const handleOpen = (item : SkillItem) => {
+    setSelectedImage(item);
+  };
+  const handleClose = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <ImageList sx={{ width: 800, height: 600 }} cols={3} gap={32}>
       {skillsData.map((item) => (
         <ImageListItem sx={{ opacity: 0.8 }} key={item.title}>
-          <img
-            src={item.img}
-            alt={item.title}
-            loading="lazy"
-
-          />
+          <img src={item.img} alt={item.title} loading="lazy" />
           <ImageListItemBar
             title={item.title}
             subtitle={item.subtitle}
             actionIcon={(
-              <IconButton onClick={handleOpen} color="primary">
+              <IconButton onClick={() => handleOpen(item)} color="primary">
                 <LaunchIcon fontSize="large" />
               </IconButton>
-
             )}
           />
-          <Modal open={open} onClose={handleClose}>
-            <ModalContent img={item.img} title={item.subtitle} description={item.description} />
-          </Modal>
+          {selectedImage === item && (
+            <Modal open onClose={handleClose}>
+              <ModalContent img={item.img} title={item.subtitle} description={item.description} />
+            </Modal>
+          )}
         </ImageListItem>
       ))}
     </ImageList>

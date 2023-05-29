@@ -38,6 +38,16 @@ const themeOptions: ThemeOptions = {
       disabled: '#56564c',
     },
   },
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          color: '#ece5d3',
+          fontSize: '1em',
+        },
+      },
+    },
+  },
 };
 
 const theme = createTheme(themeOptions);

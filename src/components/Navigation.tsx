@@ -4,10 +4,11 @@ import { jsx } from '@emotion/react';
 import {
   Button,
   Tooltip,
+  Zoom,
 } from '@mui/material';
 import {
   Home as HomeIcon,
-  Person as AboutIcon,
+  Lightbulb as SkillsIcon,
   FolderCopy as ProjectIcon,
   Storage as ServerIcon,
   Mail as ContactIcon,
@@ -15,32 +16,47 @@ import {
 
 interface Props {
   section: string,
+  description: string,
   icon: ReactNode,
 }
 
-const NavItem = ({ section, icon }: Props) => {
+const NavItem = ({ section, description, icon }: Props) => {
   const href = `#${section}`;
   return (
-    <Button sx={{ fontSize: 36 }} size="large" href={href}>{icon}</Button>
+    <Tooltip sx={{ fontSize: '48px' }} title={description} TransitionComponent={Zoom} arrow>
+      <Button href={href}>
+        {icon}
+      </Button>
+    </Tooltip>
   );
 };
 
-export const Navigation = () => (
-  <div css={{
-    position: 'fixed',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    width: '100%',
-    backgroundColor: 'ActiveBorder',
-    display: 'flex',
-    justifyContent: 'center',
-  }}
-  >
-    <NavItem section="home" icon={<HomeIcon />} />
-    <NavItem section="about" icon={<AboutIcon />} />
-    <NavItem section="projects" icon={<ProjectIcon />} />
-    <NavItem section="server" icon={<ServerIcon />} />
-    <NavItem section="contact" icon={<ContactIcon />} />
-  </div>
-);
+export const Navigation = () => {
+  const navStyle = { padding: '4px', fontSize: '48px' };
+  const navigationData: Props[] = [
+    { section: 'home', description: 'About Me', icon: <HomeIcon sx={navStyle} /> },
+    { section: 'skills', description: 'My Skills', icon: <SkillsIcon sx={navStyle} /> },
+    { section: 'projects', description: 'My Github', icon: <ProjectIcon sx={navStyle} /> },
+    { section: 'server', description: 'My server', icon: <ServerIcon sx={navStyle} /> },
+    { section: 'contact', description: 'Contact me', icon: <ContactIcon sx={navStyle} /> },
+  ];
+
+  return (
+    <div css={{
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: 'ActiveBorder',
+      display: 'flex',
+      justifyContent: 'center',
+    }}
+    >
+      {navigationData.map((data) => (
+        <div key={data.section}>
+          <NavItem section={data.section} description={data.description} icon={data.icon} />
+        </div>
+      ))}
+    </div>
+  );
+};

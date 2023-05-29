@@ -4,11 +4,10 @@ import {
   CssBaseline,
   Stack,
   Typography,
-  createTheme,
   ThemeProvider,
-  ThemeOptions,
 } from '@mui/material';
 
+import { Theme } from './components/Theme';
 import { Navigation } from './components/Navigation';
 import { Footer } from './sections/Footer';
 import { Contact } from './sections/Contact';
@@ -17,43 +16,8 @@ import { Github } from './sections/Github';
 import { Skills } from './sections/Skills';
 import { Myself } from './sections/Myself';
 
-const themeOptions: ThemeOptions = {
-  palette: {
-    primary: {
-      main: '#ece5d3',
-    },
-    secondary: {
-      main: '#b9b09f',
-    },
-    background: {
-      default: '#030300',
-    },
-    text: {
-      primary: '#ece5d3',
-    },
-    divider: '#56564c',
-    action: {
-      hover: '#b9b09f',
-      hoverOpacity: 0.3,
-      disabled: '#56564c',
-    },
-  },
-  components: {
-    MuiTooltip: {
-      styleOverrides: {
-        tooltip: {
-          color: '#ece5d3',
-          fontSize: '1em',
-        },
-      },
-    },
-  },
-};
-
-const theme = createTheme(themeOptions);
-
 export const App = () => (
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={Theme}>
     <CssBaseline />
     <div css={{
       display: 'flex',

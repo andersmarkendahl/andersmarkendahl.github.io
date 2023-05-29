@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react';
+import { ReactNode } from 'react';
 import {
   Button,
 } from '@mui/material';
@@ -11,7 +12,7 @@ import {
 import { Section } from '../components/Section';
 
 interface ContactItemProps {
-  icon: React.ReactNode;
+  icon: ReactNode;
   description: string;
   link?: string;
 }

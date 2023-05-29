@@ -37,8 +37,8 @@ export const Navigation = () => {
     { section: 'home', description: 'About Me', icon: <HomeIcon sx={navStyle} /> },
     { section: 'skills', description: 'My Skills', icon: <SkillsIcon sx={navStyle} /> },
     { section: 'projects', description: 'My Github', icon: <ProjectIcon sx={navStyle} /> },
-    { section: 'server', description: 'My server', icon: <ServerIcon sx={navStyle} /> },
-    { section: 'contact', description: 'Contact me', icon: <ContactIcon sx={navStyle} /> },
+    { section: 'server', description: 'My Server', icon: <ServerIcon sx={navStyle} /> },
+    { section: 'contact', description: 'Contact Me', icon: <ContactIcon sx={navStyle} /> },
   ];
 
   return (

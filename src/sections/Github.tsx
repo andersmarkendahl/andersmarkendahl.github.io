@@ -40,12 +40,14 @@ const GithubList = () => {
 
 const Content = () => (
   <div>
-    <Typography variant="body1">
-      A list of personal software projects, also linked on my
-      <Link variant="inherit" underline="hover" href="https://github.com/andersmarkendahl/"> Github Profile</Link>
-      .
-      These projects are mainly for educational purposes in a wide range of topics.
-    </Typography>
+    <div css={{ marginBottom: '8px' }}>
+      <Typography variant="body1">
+        A list of personal software projects, also linked on my
+        <Link variant="inherit" underline="hover" href="https://github.com/andersmarkendahl/"> Github Profile</Link>
+        .
+        These projects are mainly for educational purposes in a wide range of topics.
+      </Typography>
+    </div>
     <GithubList />
   </div>
 );

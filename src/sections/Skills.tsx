@@ -69,9 +69,11 @@ const SkillList = () => (
 
 export const Content = () => (
   <div>
-    <Typography variant="body1">
-      A list of skills and topics that I have learned during my time in software development
-    </Typography>
+    <div css={{ marginBottom: '8px' }}>
+      <Typography variant="body1">
+        A list of skills and topics that I have learned during my time in software development
+      </Typography>
+    </div>
     <SkillList />
   </div>
 );

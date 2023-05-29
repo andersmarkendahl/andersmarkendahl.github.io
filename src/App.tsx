@@ -50,21 +50,24 @@ export const App = () => (
       alignItems: 'center',
       justifyContent: 'center',
       overflow: 'hidden',
-      margin: '0 32px',
+      margin: '32px',
     }}
     >
       <Stack spacing={8}>
-        <div css={{ margin: '16px' }}>
+        <div id="home" css={{ margin: '16px' }}>
           <Typography variant="h2" align="center">Anders Markendahl</Typography>
         </div>
-        <Myself />
-        <Skills />
-        <Github />
-        <Server />
-        <Contact />
-        <Footer />
+        <Myself id="about" />
+        <Skills id="skills" />
+        <Github id="projects" />
+        <Server id="server" />
+        <Contact id="contact" />
+        <div css={{ paddingBottom: '32px' }}>
+          <Footer />
+        </div>
       </Stack>
-      <Navigation />
     </div>
+    <Navigation />
+
   </ThemeProvider>
 );

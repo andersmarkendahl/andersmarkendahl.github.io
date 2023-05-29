@@ -6,6 +6,7 @@ import {
 } from '@mui/material';
 import { ProjectItem, Props as ProjectItemProps } from '../components/ProjectItem';
 import { SectionHeader } from '../components/SectionHeader';
+import { SectionProps } from '../components/SectionProps';
 
 const GithubList = () => {
   const githubData: ProjectItemProps[] = [
@@ -37,8 +38,8 @@ const GithubList = () => {
     </div>
   );
 };
-export const Github = () => (
-  <div>
+export const Github = ({ id }: SectionProps) => (
+  <div id={id}>
     <div css={{ marginBottom: '8px' }}>
       <SectionHeader title="My Github" />
       <Typography variant="body1">

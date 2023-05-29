@@ -14,6 +14,7 @@ import programImg from './images/programming.png';
 import linuxImg from './images/linux.png';
 import iplbImg from './images/iplb.png';
 import agileImg from './images/agile.png';
+import { SectionProps } from '../components/SectionProps';
 
 const skillsData = [
   {
@@ -67,8 +68,8 @@ const SkillList = () => (
   </ImageList>
 );
 
-export const Skills = () => (
-  <div>
+export const Skills = ({ id }: SectionProps) => (
+  <div id={id}>
     <SectionHeader title="My Skills" />
     <Typography variant="body1">
       A list of skills and topics that I have learned during my time in software development

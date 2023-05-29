@@ -5,9 +5,10 @@ import {
 } from '@mui/material';
 import { SectionHeader } from '../components/SectionHeader';
 import profileImg from './images/profile.png';
+import { SectionProps } from '../components/SectionProps';
 
-export const Myself = () => (
-  <div>
+export const Myself = ({ id }: SectionProps) => (
+  <div id={id}>
     <SectionHeader title="About Me" />
     <div css={{ display: 'flex' }}>
       <div>

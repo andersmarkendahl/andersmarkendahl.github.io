@@ -9,6 +9,7 @@ import {
   LocationOn,
 } from '@mui/icons-material';
 import { SectionHeader } from '../components/SectionHeader';
+import { SectionProps } from '../components/SectionProps';
 
 interface ContactItemProps {
   icon: React.ReactNode;
@@ -44,8 +45,8 @@ const ContactList = () => {
   );
 };
 
-export const Contact = () => (
-  <div>
+export const Contact = ({ id } : SectionProps) => (
+  <div id={id}>
     <SectionHeader title="Contact Me" />
     <ContactList />
   </div>

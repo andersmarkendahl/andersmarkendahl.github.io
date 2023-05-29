@@ -5,9 +5,10 @@ import {
 } from '@mui/material';
 import { ProjectItem } from '../components/ProjectItem';
 import { SectionHeader } from '../components/SectionHeader';
+import { SectionProps } from '../components/SectionProps';
 
-export const Server = () => (
-  <div>
+export const Server = ({ id }: SectionProps) => (
+  <div id={id}>
     <div css={{ marginBottom: '8px' }}>
       <SectionHeader title="My Server" />
       <Typography variant="body1">

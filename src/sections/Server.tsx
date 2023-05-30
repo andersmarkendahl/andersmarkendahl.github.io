@@ -10,8 +10,8 @@ import { Section } from '../components/Section';
 const Content = () => (
   <div>
     <div css={{ marginBottom: '8px' }}>
-      <div css={{ margin: '12px 0', maxWidth: '50%' }}>
-        <Alert severity="warning">Currently offline to save cost (and the environment)</Alert>
+      <div css={{ margin: '12px 0', width: 'fit-content' }}>
+        <Alert severity="warning">2023-02-16:   Currently offline to save cost (and the environment)</Alert>
       </div>
       <Typography variant="body1">
         A server hosted by me that contain a changing set of services.

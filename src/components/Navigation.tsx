@@ -33,7 +33,12 @@ const NavItem = ({ section, description, icon }: Props) => {
 };
 
 export const Navigation = () => {
-  const [viewport, setViewport] = useState({ width: window.innerWidth, height: window.innerHeight });
+  const [viewport, setViewport] = useState(
+    {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    },
+  );
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,18 +52,16 @@ export const Navigation = () => {
     };
   }, []);
 
-
   const theme = useTheme();
-  console.log(theme);
   const navBarColor = theme.palette.background.paper;
   const iconStyle = {
     padding: '4px',
     fontSize: {
       sm: '112px',
       md: '80px',
-    }
+    },
   };
-  
+
   const navigationData: Props[] = [
     { section: 'home', description: 'About Me', icon: <HomeIcon sx={iconStyle} /> },
     { section: 'skills', description: 'My Skills', icon: <SkillsIcon sx={iconStyle} /> },
@@ -84,7 +87,13 @@ export const Navigation = () => {
         </div>
       ))}
       <div>
-        Viewport {viewport.width}px {viewport.height}px 
+        Viewport
+        {' '}
+        {viewport.width}
+        px
+        {' '}
+        {viewport.height}
+        px
       </div>
     </div>
   );

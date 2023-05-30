@@ -39,7 +39,7 @@ const skillsData: SkillItem[] = [
   {
     img: cicdImg,
     title: 'CICD',
-    subtitle: 'Continous Integration and Continous Deployment',
+    subtitle: 'Continous Integration and Deployment',
     description: 'Historically I have worked with large organizations migrating from a waterfall model to full CI/CD development pipelines including integration with customer. In later years my experience includes improving performance and reducing cost of existing pipelines. Software I have worked with includes Jenkins, Github Actions, AWS CodePipeline and I also possess basic knowledge of CircleCI.',
   },
   {
@@ -75,12 +75,12 @@ const ModalContent = ({ img, title, description }: ModalContentProps) => (
     padding: '32px',
   }}
   >
-    <div css={{ marginBottom: '4px' }}>
-      <img src={img} alt={title} loading="lazy" />
+    <img src={img} alt={title} loading="lazy" />
+    <div css={{ marginTop: '8px', marginBottom: '16px' }}>
+      <Typography variant="h3">
+        {title}
+      </Typography>
     </div>
-    <Typography variant="h5">
-      {title}
-    </Typography>
     <Typography>
       {description}
     </Typography>

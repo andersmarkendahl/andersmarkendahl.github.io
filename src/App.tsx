@@ -42,6 +42,5 @@ export const App = () => (
       </Stack>
     </div>
     <Navigation />
-
   </ThemeProvider>
 );

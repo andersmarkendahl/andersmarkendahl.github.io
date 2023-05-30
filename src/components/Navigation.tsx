@@ -1,10 +1,11 @@
 /** @jsx jsx */
-import { ReactNode } from 'react';
+import { ReactNode, useState, useEffect } from 'react';
 import { jsx } from '@emotion/react';
 import {
   Button,
   Tooltip,
   Zoom,
+  useTheme,
 } from '@mui/material';
 import {
   Home as HomeIcon,
@@ -13,7 +14,6 @@ import {
   Storage as ServerIcon,
   Mail as ContactIcon,
 } from '@mui/icons-material';
-import { Theme } from './Theme';
 
 interface Props {
   section: string,
@@ -24,7 +24,7 @@ interface Props {
 const NavItem = ({ section, description, icon }: Props) => {
   const href = `#${section}`;
   return (
-    <Tooltip sx={{ fontSize: '48px' }} title={description} TransitionComponent={Zoom} arrow>
+    <Tooltip title={description} TransitionComponent={Zoom} arrow>
       <Button href={href}>
         {icon}
       </Button>
@@ -33,8 +33,32 @@ const NavItem = ({ section, description, icon }: Props) => {
 };
 
 export const Navigation = () => {
-  const navColor = Theme.palette.background.paper;
-  const iconStyle = { padding: '4px', fontSize: '48px' };
+  const [viewport, setViewport] = useState({ width: window.innerWidth, height: window.innerHeight });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setViewport({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
+  const theme = useTheme();
+  console.log(theme);
+  const navBarColor = theme.palette.background.paper;
+  const iconStyle = {
+    padding: '4px',
+    fontSize: {
+      sm: '112px',
+      md: '80px',
+    }
+  };
+  
   const navigationData: Props[] = [
     { section: 'home', description: 'About Me', icon: <HomeIcon sx={iconStyle} /> },
     { section: 'skills', description: 'My Skills', icon: <SkillsIcon sx={iconStyle} /> },
@@ -49,7 +73,7 @@ export const Navigation = () => {
       bottom: 0,
       left: 0,
       right: 0,
-      backgroundColor: navColor,
+      backgroundColor: navBarColor,
       display: 'flex',
       justifyContent: 'center',
     }}
@@ -59,6 +83,9 @@ export const Navigation = () => {
           <NavItem section={data.section} description={data.description} icon={data.icon} />
         </div>
       ))}
+      <div>
+        Viewport {viewport.width}px {viewport.height}px 
+      </div>
     </div>
   );
 };

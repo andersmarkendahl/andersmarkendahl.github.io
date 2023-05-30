@@ -56,9 +56,10 @@ export const Navigation = () => {
   const navBarColor = theme.palette.background.paper;
   const iconStyle = {
     padding: '4px',
+    // Base responsiveness for navigation
     fontSize: {
-      sm: '112px',
-      md: '80px',
+      md: '112px',
+      lg: '80px',
     },
   };
 
@@ -86,15 +87,6 @@ export const Navigation = () => {
           <NavItem section={data.section} description={data.description} icon={data.icon} />
         </div>
       ))}
-      <div>
-        Viewport
-        {' '}
-        {viewport.width}
-        px
-        {' '}
-        {viewport.height}
-        px
-      </div>
     </div>
   );
 };

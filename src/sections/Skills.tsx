@@ -111,6 +111,7 @@ const SkillList = () => {
             srcSet={`${item.img}?w=2x`}
             alt={item.title}
             loading='lazy'
+            // Could not override this when using ImageList
             style={{ objectFit: 'contain' }}
           />
           <ImageListItemBar

@@ -23,6 +23,7 @@ export const App = () => {
           justifyContent: 'center',
           overflow: 'hidden',
           margin: '32px auto 160px auto',
+          // Simple responsiveness
           '@media (min-width: 600px)': {
             maxWidth: '600px',
           },

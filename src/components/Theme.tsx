@@ -30,7 +30,7 @@ const themeOptions: ThemeOptions = {
       styleOverrides: {
         tooltip: {
           color: '#ece5d3',
-          fontSize: '1em',
+          fontSize: '1.5rem',
         },
       },
     },

@@ -8,6 +8,7 @@ import {
   ImageListItem,
   ImageListItemBar,
   Typography,
+  useTheme,
 } from '@mui/material'
 import LaunchIcon from '@mui/icons-material/Launch'
 import { Section } from '../components/Section'
@@ -67,29 +68,32 @@ interface ModalContentProps {
   description: string
 }
 
-const ModalContent = ({ img, title, description }: ModalContentProps) => (
-  <div
-    css={{
-      justifyContent: 'center',
-      alignItems: 'center',
-      textAlign: 'center',
-      width: '600px',
-      backgroundColor: '#1f1f1e',
-      border: '2px solid #fff',
-      borderColor: '#b9b09f',
-      borderRadius: '8px',
-      padding: '32px',
-    }}
-  >
-    <img src={img} alt={title} loading='lazy' />
-    <div css={{ marginTop: '8px', marginBottom: '16px' }}>
-      <Typography variant='h3'>{title}</Typography>
+const ModalContent = ({ img, title, description }: ModalContentProps) => {
+  const { palette } = useTheme()
+  return (
+    <div
+      css={{
+        justifyContent: 'center',
+        alignItems: 'center',
+        textAlign: 'center',
+        width: '600px',
+        backgroundColor: `${palette.background.paper}`,
+        border: `4px solid ${palette.secondary.main}`,
+        borderRadius: '8px',
+        padding: '32px',
+      }}
+    >
+      <img src={img} alt={title} loading='lazy' />
+      <div css={{ marginTop: '8px', marginBottom: '16px' }}>
+        <Typography variant='h3'>{title}</Typography>
+      </div>
+      <Typography>{description}</Typography>
     </div>
-    <Typography>{description}</Typography>
-  </div>
-)
+  )
+}
 
 const SkillList = () => {
+  const { palette } = useTheme()
   const [selectedImage, setSelectedImage] = useState<SkillItem | null>(null)
   const handleOpen = (item: SkillItem) => {
     setSelectedImage(item)
@@ -124,7 +128,7 @@ const SkillList = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor: '#03030080',
+                backgroundColor: `${palette.background.default}80`,
               }}
               open
               onClose={handleClose}

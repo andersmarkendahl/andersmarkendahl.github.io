@@ -10,7 +10,7 @@ export const themeOptions: ThemeOptions = {
     },
     background: {
       default: '#030300',
-      paper: '#56564c',
+      paper: '#1f1f1e',
     },
     text: {
       primary: '#ece5d3',

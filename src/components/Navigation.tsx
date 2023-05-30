@@ -26,8 +26,8 @@ const NavItem = ({ section, description, icon }: Props) => {
 }
 
 export const Navigation = () => {
-  const theme = useTheme()
-  const navBarColor = theme.palette.background.paper
+  const { palette } = useTheme()
+  const navBarColor = palette.action.disabled
   const iconStyle = {
     padding: '4px',
     // Base responsiveness for navigation

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { ReactNode, useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { jsx } from '@emotion/react';
 import {
   Button,
@@ -33,25 +33,6 @@ const NavItem = ({ section, description, icon }: Props) => {
 };
 
 export const Navigation = () => {
-  const [viewport, setViewport] = useState(
-    {
-      width: window.innerWidth,
-      height: window.innerHeight,
-    },
-  );
-
-  useEffect(() => {
-    const handleResize = () => {
-      setViewport({ width: window.innerWidth, height: window.innerHeight });
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   const theme = useTheme();
   const navBarColor = theme.palette.background.paper;
   const iconStyle = {

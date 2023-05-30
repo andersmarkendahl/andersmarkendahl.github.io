@@ -1,6 +1,4 @@
-import {
-  ThemeOptions,
-} from '@mui/material';
+import { ThemeOptions } from '@mui/material'
 
 export const themeOptions: ThemeOptions = {
   palette: {
@@ -86,4 +84,4 @@ export const themeOptions: ThemeOptions = {
       },
     },
   },
-};
+}

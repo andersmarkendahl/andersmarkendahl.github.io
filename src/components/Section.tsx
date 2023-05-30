@@ -8,7 +8,7 @@ import {
 
 const SectionHeader = ({ title } : { title : string }) => (
   <div css={{ marginBottom: '8px', maxWidth: '200px' }}>
-    <Typography variant="h4">
+    <Typography variant="h2">
       {title}
     </Typography>
     <Divider sx={{ width: '100%', borderBottomWidth: 4 }} orientation="horizontal" />

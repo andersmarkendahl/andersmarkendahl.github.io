@@ -29,6 +29,17 @@ export const App = () => {
         justifyContent: 'center',
         overflow: 'hidden',
         margin: '32px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        '@media (min-width: 600px)': {
+          maxWidth: '600px',
+        },
+        '@media (min-width: 900px)': {
+          maxWidth: '900px',
+        },
+        '@media (min-width: 1200px)': {
+          maxWidth: '1200px',
+        },
       }}
       >
         <Stack spacing={8}>

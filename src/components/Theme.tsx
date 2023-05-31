@@ -75,7 +75,11 @@ const primaryThemeOptions: ThemeOptions = {
 }
 
 const secondaryThemeOptions: ThemeOptions = {
+  ...primaryThemeOptions, // Spread the primaryThemeOptions to inherit all the options
+
   palette: {
+    ...primaryThemeOptions.palette, // Spread the primaryThemeOptions.palette to inherit all the palette options
+
     primary: {
       main: '#dbc8da',
     },
@@ -97,51 +101,15 @@ const secondaryThemeOptions: ThemeOptions = {
     },
   },
   typography: {
-    body1: {
-      fontSize: '1.5rem',
-    },
-    h1: {
-      fontSize: '3rem',
-    },
-    h2: {
-      fontSize: '2.2rem',
-    },
-    h3: {
-      fontSize: '1.7rem',
-    },
+    ...primaryThemeOptions.typography, // Spread the primaryThemeOptions.palette to inherit all the palette options
   },
   components: {
+    ...primaryThemeOptions.components, // Spread the primaryThemeOptions.palette to inherit all the palette options
+
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
           color: '#dbc8da',
-          fontSize: '1.5rem',
-        },
-      },
-    },
-    MuiImageListItemBar: {
-      styleOverrides: {
-        title: {
-          fontSize: '1.3em',
-          lineHeight: '1.3',
-        },
-        subtitle: {
-          fontSize: '1.1em',
-          lineHeight: '1.1',
-        },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        text: {
-          fontSize: '1.3rem',
-        },
-      },
-    },
-    MuiAlert: {
-      styleOverrides: {
-        standardWarning: {
-          fontSize: '1.3rem',
         },
       },
     },

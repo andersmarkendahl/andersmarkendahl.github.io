@@ -104,6 +104,7 @@ const secondaryThemeOptions: ThemeOptions = {
   typography: {
     ...primaryThemeOptions.typography,
     fontFamily: `"Baskerville", "Cambria", "Times New Roman", "Georgia"`,
+    fontWeightRegular: 'bold',
   },
   components: {
     ...primaryThemeOptions.components,

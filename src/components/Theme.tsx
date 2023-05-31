@@ -74,11 +74,12 @@ const primaryThemeOptions: ThemeOptions = {
   },
 }
 
+// Secondary theme inherits all settings and then overrides specifics
 const secondaryThemeOptions: ThemeOptions = {
-  ...primaryThemeOptions, // Spread the primaryThemeOptions to inherit all the options
+  ...primaryThemeOptions,
 
   palette: {
-    ...primaryThemeOptions.palette, // Spread the primaryThemeOptions.palette to inherit all the palette options
+    ...primaryThemeOptions.palette,
 
     primary: {
       main: '#dbc8da',
@@ -101,10 +102,11 @@ const secondaryThemeOptions: ThemeOptions = {
     },
   },
   typography: {
-    ...primaryThemeOptions.typography, // Spread the primaryThemeOptions.palette to inherit all the palette options
+    ...primaryThemeOptions.typography,
+    fontFamily: `"Baskerville", "Cambria", "Times New Roman", "Georgia"`,
   },
   components: {
-    ...primaryThemeOptions.components, // Spread the primaryThemeOptions.palette to inherit all the palette options
+    ...primaryThemeOptions.components,
 
     MuiTooltip: {
       styleOverrides: {

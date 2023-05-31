@@ -11,6 +11,12 @@ import { Github } from './sections/Github'
 import { Skills } from './sections/Skills'
 import { Myself } from './sections/Myself'
 
+const hideOnSmallerScreen = {
+  '@media (max-width: 1200px)': {
+    display: 'none',
+  },
+}
+
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(primaryTheme)
 
@@ -67,23 +73,11 @@ export const App = () => {
             justifyContent: 'center',
           }}
         >
-          <div
-            css={{
-              '@media (max-width: 1200px)': {
-                display: 'none',
-              },
-            }}
-          >
+          <div css={hideOnSmallerScreen}>
             <Typography variant='h3'>Theme 1</Typography>
           </div>
           <Switch checked={currentTheme === secondaryTheme} onChange={toggleTheme} />
-          <div
-            css={{
-              '@media (max-width: 1200px)': {
-                display: 'none',
-              },
-            }}
-          >
+          <div css={hideOnSmallerScreen}>
             <Typography variant='h3'>Theme 2</Typography>
           </div>
         </div>

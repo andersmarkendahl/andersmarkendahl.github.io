@@ -1,6 +1,6 @@
-import { ThemeOptions } from '@mui/material'
+import { createTheme, ThemeOptions } from '@mui/material'
 
-export const themeOptions: ThemeOptions = {
+const primaryThemeOptions: ThemeOptions = {
   palette: {
     primary: {
       main: '#ece5d3',
@@ -85,3 +85,92 @@ export const themeOptions: ThemeOptions = {
     },
   },
 }
+
+const secondaryThemeOptions: ThemeOptions = {
+  palette: {
+    primary: {
+      main: '#dbc8da',
+    },
+    secondary: {
+      main: '#665866',
+    },
+    background: {
+      default: '#000000',
+      paper: '#1a0014',
+    },
+    text: {
+      primary: '#dbc8da',
+    },
+    divider: '#443d45',
+    action: {
+      hover: '#665866',
+      hoverOpacity: 0.3,
+      disabled: '#443d45',
+    },
+  },
+  typography: {
+    body1: {
+      fontSize: '1.5rem',
+      '@media (max-width:600px)': {
+        fontSize: '1.0rem', // Font size for screens <= 600px width
+      },
+    },
+    h1: {
+      fontSize: '3rem',
+      '@media (max-width:600px)': {
+        fontSize: '1.5em', // Font size for screens <= 600px width
+      },
+    },
+    h2: {
+      fontSize: '2.2rem',
+      '@media (max-width:600px)': {
+        fontSize: '1.5rem', // Font size for screens <= 600px width
+      },
+    },
+    h3: {
+      fontSize: '1.7rem',
+      '@media (max-width:600px)': {
+        fontSize: '1.5rem', // Font size for screens <= 600px width
+      },
+    },
+  },
+  components: {
+    MuiTooltip: {
+      styleOverrides: {
+        tooltip: {
+          color: '#dbc8da',
+          fontSize: '1.5rem',
+        },
+      },
+    },
+    MuiImageListItemBar: {
+      styleOverrides: {
+        title: {
+          fontSize: '1.3em',
+          lineHeight: '1.3',
+        },
+        subtitle: {
+          fontSize: '1.1em',
+          lineHeight: '1.1',
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        text: {
+          fontSize: '1.3rem',
+        },
+      },
+    },
+    MuiAlert: {
+      styleOverrides: {
+        standardWarning: {
+          fontSize: '1.3rem',
+        },
+      },
+    },
+  },
+}
+
+export const primaryTheme = createTheme(primaryThemeOptions)
+export const secondaryTheme = createTheme(secondaryThemeOptions)

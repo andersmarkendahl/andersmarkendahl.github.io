@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
-import { CssBaseline, Stack, Typography, ThemeProvider, createTheme } from '@mui/material'
-
+import { useState } from 'react'
+import { CssBaseline, Stack, Switch, Typography, ThemeProvider } from '@mui/material'
 import profileImg from './sections/images/profile.png'
-import { themeOptions } from './components/Theme'
+import { primaryTheme, secondaryTheme } from './components/Theme'
 import { Navigation } from './components/Navigation'
 import { Contact } from './sections/Contact'
 import { Server } from './sections/Server'
@@ -12,9 +12,15 @@ import { Skills } from './sections/Skills'
 import { Myself } from './sections/Myself'
 
 export const App = () => {
-  const theme = createTheme(themeOptions)
+  const [currentTheme, setCurrentTheme] = useState(primaryTheme)
+
+  const toggleTheme = () => {
+    const newTheme = currentTheme === primaryTheme ? secondaryTheme : primaryTheme
+    setCurrentTheme(newTheme)
+  }
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={currentTheme}>
       <CssBaseline />
       <div
         css={{
@@ -53,7 +59,19 @@ export const App = () => {
           <Contact id='contact' />
         </Stack>
       </div>
-      <Navigation />
+      <Navigation>
+        <div
+          css={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Typography>Primary Theme</Typography>
+          <Switch checked={currentTheme === secondaryTheme} onChange={toggleTheme} />
+          <Typography>Secondary Theme</Typography>
+        </div>
+      </Navigation>
     </ThemeProvider>
   )
 }

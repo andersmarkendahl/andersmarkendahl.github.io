@@ -25,7 +25,7 @@ const NavItem = ({ section, description, icon }: Props) => {
   )
 }
 
-export const Navigation = () => {
+export const Navigation = ({ children }: { children: ReactNode }) => {
   const { palette } = useTheme()
   const navBarColor = palette.action.disabled
   const iconStyle = {
@@ -55,6 +55,7 @@ export const Navigation = () => {
         backgroundColor: navBarColor,
         display: 'flex',
         justifyContent: 'center',
+        alignItems: 'center',
       }}
     >
       {navigationData.map((data) => (
@@ -62,6 +63,15 @@ export const Navigation = () => {
           <NavItem section={data.section} description={data.description} icon={data.icon} />
         </div>
       ))}
+      <div
+        css={{
+          position: 'absolute',
+          right: 0,
+          marginRight: '16px',
+        }}
+      >
+        {children}
+      </div>
     </div>
   )
 }

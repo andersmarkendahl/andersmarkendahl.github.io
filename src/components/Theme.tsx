@@ -25,27 +25,15 @@ const primaryThemeOptions: ThemeOptions = {
   typography: {
     body1: {
       fontSize: '1.5rem',
-      '@media (max-width:600px)': {
-        fontSize: '1.0rem', // Font size for screens <= 600px width
-      },
     },
     h1: {
       fontSize: '3rem',
-      '@media (max-width:600px)': {
-        fontSize: '1.5em', // Font size for screens <= 600px width
-      },
     },
     h2: {
       fontSize: '2.2rem',
-      '@media (max-width:600px)': {
-        fontSize: '1.5rem', // Font size for screens <= 600px width
-      },
     },
     h3: {
       fontSize: '1.7rem',
-      '@media (max-width:600px)': {
-        fontSize: '1.5rem', // Font size for screens <= 600px width
-      },
     },
   },
   components: {
@@ -111,27 +99,15 @@ const secondaryThemeOptions: ThemeOptions = {
   typography: {
     body1: {
       fontSize: '1.5rem',
-      '@media (max-width:600px)': {
-        fontSize: '1.0rem', // Font size for screens <= 600px width
-      },
     },
     h1: {
       fontSize: '3rem',
-      '@media (max-width:600px)': {
-        fontSize: '1.5em', // Font size for screens <= 600px width
-      },
     },
     h2: {
       fontSize: '2.2rem',
-      '@media (max-width:600px)': {
-        fontSize: '1.5rem', // Font size for screens <= 600px width
-      },
     },
     h3: {
       fontSize: '1.7rem',
-      '@media (max-width:600px)': {
-        fontSize: '1.5rem', // Font size for screens <= 600px width
-      },
     },
   },
   components: {

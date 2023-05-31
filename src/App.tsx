@@ -67,9 +67,25 @@ export const App = () => {
             justifyContent: 'center',
           }}
         >
-          <Typography>Primary Theme</Typography>
+          <div
+            css={{
+              '@media (max-width: 1200px)': {
+                display: 'none',
+              },
+            }}
+          >
+            <Typography variant='h3'>Theme 1</Typography>
+          </div>
           <Switch checked={currentTheme === secondaryTheme} onChange={toggleTheme} />
-          <Typography>Secondary Theme</Typography>
+          <div
+            css={{
+              '@media (max-width: 1200px)': {
+                display: 'none',
+              },
+            }}
+          >
+            <Typography variant='h3'>Theme 2</Typography>
+          </div>
         </div>
       </Navigation>
     </ThemeProvider>

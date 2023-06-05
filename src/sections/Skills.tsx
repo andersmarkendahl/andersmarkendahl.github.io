@@ -12,11 +12,7 @@ import {
 } from '@mui/material'
 import LaunchIcon from '@mui/icons-material/Launch'
 import { Section } from '../components/Section'
-import cicdImg from './images/cicd.png'
-import programImg from './images/programming.png'
-import linuxImg from './images/linux.png'
-import iplbImg from './images/iplb.png'
-import agileImg from './images/agile.png'
+import { cicdImg, programImg, linuxImg, iplbImg, agileImg } from './images'
 
 interface SkillItem {
   title: string

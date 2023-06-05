@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react'
 import { useState } from 'react'
 import { CssBaseline, Stack, Switch, Typography, ThemeProvider } from '@mui/material'
-import profileImg from './sections/images/profile.png'
+import { profileImg } from './sections/images'
 import { primaryTheme, secondaryTheme } from './components/Theme'
 import { Navigation } from './components/Navigation'
 import { Contact } from './sections/Contact'

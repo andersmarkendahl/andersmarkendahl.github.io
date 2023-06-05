@@ -99,7 +99,7 @@ const SkillList = () => {
   }
 
   return (
-    <ImageList sx={{ width: 800, height: 600 }} cols={3} gap={32}>
+    <ImageList cols={3} gap={32}>
       {skillsData.map((item) => (
         <ImageListItem sx={{ opacity: 0.8 }} key={item.title}>
           <img

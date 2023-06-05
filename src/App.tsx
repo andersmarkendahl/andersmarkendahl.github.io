@@ -33,9 +33,11 @@ export const App = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          overflow: 'hidden',
           margin: '32px auto 160px auto',
           // Simple responsiveness
+          '@media (min-width: 300px)': {
+            maxWidth: '300px',
+          },
           '@media (min-width: 600px)': {
             maxWidth: '600px',
           },
@@ -55,7 +57,7 @@ export const App = () => {
               </Typography>
             </div>
             <div css={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img src={profileImg} alt='Anders profile' width={400} />
+              <img src={profileImg} alt='Anders profile' width='400px' />
             </div>
           </div>
           <Myself id='about' />

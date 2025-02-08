@@ -1,7 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import { useState } from 'react'
-import { CssBaseline, Stack, Switch, Typography, ThemeProvider } from '@mui/material'
+import {
+  CssBaseline,
+  Stack,
+  Typography,
+  ThemeProvider,
+  ToggleButtonGroup,
+  ToggleButton,
+} from '@mui/material'
 import { profileImg } from './sections/images'
 import { primaryTheme, secondaryTheme } from './components/Theme'
 import { Navigation } from './components/Navigation'
@@ -10,12 +17,6 @@ import { Server } from './sections/Server'
 import { Github } from './sections/Github'
 import { Skills } from './sections/Skills'
 import { Myself } from './sections/Myself'
-
-const hideOnSmallerScreen = {
-  '@media (max-width: 1200px)': {
-    display: 'none',
-  },
-}
 
 export const App = () => {
   const [currentTheme, setCurrentTheme] = useState(primaryTheme)
@@ -75,13 +76,21 @@ export const App = () => {
             justifyContent: 'center',
           }}
         >
-          <div css={hideOnSmallerScreen}>
-            <Typography variant='h3'>Theme 1</Typography>
-          </div>
-          <Switch checked={currentTheme === secondaryTheme} onChange={toggleTheme} />
-          <div css={hideOnSmallerScreen}>
-            <Typography variant='h3'>Theme 2</Typography>
-          </div>
+          <ToggleButtonGroup
+            color='secondary'
+            size='small'
+            value={currentTheme}
+            onChange={toggleTheme}
+            exclusive
+            aria-label='Small sizes'
+          >
+            <ToggleButton size='large' value='primaryTheme'>
+              Theme1
+            </ToggleButton>
+            <ToggleButton size='large' value='secondaryTheme'>
+              Theme2
+            </ToggleButton>
+          </ToggleButtonGroup>
         </div>
       </Navigation>
     </ThemeProvider>

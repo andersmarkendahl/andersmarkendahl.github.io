@@ -7,18 +7,25 @@ const Content = () => (
   <div>
     <div>
       <Typography sx={{ marginBottom: '16px' }} variant='body1'>
-        My name is Anders Markendahl and I live in Uppsala, Sweden, with my wife and three kids.
-        Uppsala is a small and vibrant city 50km north of Stockholm.
+        Hi! I am Anders Markendahl, and I live in Uppsala, Sweden, with my wife and our three kids.
       </Typography>
       <Typography sx={{ marginBottom: '16px' }} variant='body1'>
-        Professionally I am a software developer and technical product manager with +10 years of
-        experience. My technical expertise revolves around end to end delivery of software products.
-        With a history as developer within networks, loadbalancing and routing, I am also
-        experienced in leading a team of developers and working according to Agile workflows.
+        I’m a technical product owner with a strong foundation in software development. With over a
+        decade of experience, I have led teams in delivering complex software products, ranging from
+        networking and routing components with microservices in Kubernetes to large-scale user
+        platforms for clinical personnel, B2B CMS systems, and mobile payment solutions. My
+        background as a developer gives me a deep technical understanding, which helps me coach
+        teams, bridge communication between stakeholders, and ensure we build scalable, high-value
+        solutions.{' '}
       </Typography>
-      <Typography variant='body1'>
-        In my spare time I usually play around with some coding projects, some of them you can find
-        referenced on this webpage.
+      <Typography sx={{ marginBottom: '16px' }} variant='body1'>
+        As a product manager, team lead, and agile coach, I thrive at the intersection of
+        technology, business, and user needs — always staying close to the technical aspects of the
+        products and services my teams deliver.
+      </Typography>
+      <Typography sx={{ marginBottom: '16px' }} variant='body1'>
+        In my spare time, I enjoy exploring new technologies and working on personal coding
+        projects—some of which you can find referenced on this webpage.{' '}
       </Typography>
     </div>
   </div>

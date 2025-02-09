@@ -1,4 +1,4 @@
-# My React app hosted as Gatsby site 
+# My React app hosted as Gatsby site
 #
 name: Deploy Anders Home page as Gatsby site to Pages
 
@@ -33,26 +33,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
       - name: Define package manager
         id: package-manager
         run: |
-            echo "manager=npm" >> $GITHUB_OUTPUT
-            echo "command=ci" >> $GITHUB_OUTPUT
-            exit 0
+          echo "manager=npm" >> $GITHUB_OUTPUT
+          echo "command=ci" >> $GITHUB_OUTPUT
+          exit 0
+
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: "18"
           cache: ${{ steps.package-manager.outputs.manager }}
+
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
         with:
           # Automatically inject pathPrefix in your Gatsby configuration file.
           static_site_generator: gatsby
+
       - name: Restore cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             build
@@ -60,14 +64,17 @@ jobs:
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('build') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
+
       - name: Install dependencies
         run: ${{ steps.package-manager.outputs.manager }} ${{ steps.package-manager.outputs.command }}
+
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
         run: ${{ steps.package-manager.outputs.manager }} run build
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./build
 
@@ -81,4 +88,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4

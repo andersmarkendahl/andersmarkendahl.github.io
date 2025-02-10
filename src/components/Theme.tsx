@@ -1,26 +1,27 @@
 import { createTheme, ThemeOptions } from '@mui/material'
 
+declare module "@mui/material/styles" {
+  interface TypeBackground {
+    navbar: string; // Add custom navbar background color
+  }
+}
+
 const primaryThemeOptions: ThemeOptions = {
   palette: {
-    primary: {
-      main: '#ece5d3',
-    },
-    secondary: {
-      main: '#b9b09f',
-    },
+    primary: { main: '#85586F' },
+    secondary: { main: '#D8B4A0' },
     background: {
-      default: '#030300',
-      paper: '#1f1f1e',
+      default: '#CDB6A8',
+      paper: '#CDB6A8',
+      navbar: '#5E3A4A',
     },
-    text: {
-      primary: '#ece5d3',
-    },
-    divider: '#56564c',
+    text: { primary: '#3E3232', secondary: '#5A4E4E' },
+    divider: '#B89B9B',
     action: {
-      hover: '#b9b09f',
-      hoverOpacity: 0.3,
-      disabled: '#56564c',
-    },
+      hover: '#A3788D',
+      hoverOpacity: 0.3, 
+      disabled: '#A38C87', 
+    }
   },
   typography: {
     body1: {
@@ -68,6 +69,8 @@ const primaryThemeOptions: ThemeOptions = {
       styleOverrides: {
         standardWarning: {
           fontSize: '1.3rem',
+          backgroundColor: '#B89B9B', // Same as divider, soft neutral
+          color: '#3E3232', // Same as text.primary
         },
       },
     },

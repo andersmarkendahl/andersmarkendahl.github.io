@@ -27,7 +27,7 @@ const NavItem = ({ section, description, icon }: Props) => {
 
 export const Navigation = ({ children }: { children: ReactNode }) => {
   const { palette } = useTheme()
-  const navBarColor = palette.action.disabled
+  const navBarColor = palette.background.navbar
   const iconStyle = {
     padding: '4px',
     fontSize: '5rem',

@@ -76,21 +76,6 @@ export const App = () => {
             justifyContent: 'center',
           }}
         >
-          <ToggleButtonGroup
-            color='secondary'
-            size='small'
-            value={currentTheme}
-            onChange={toggleTheme}
-            exclusive
-            aria-label='Small sizes'
-          >
-            <ToggleButton size='large' value='primaryTheme'>
-              Theme1
-            </ToggleButton>
-            <ToggleButton size='large' value='secondaryTheme'>
-              Theme2
-            </ToggleButton>
-          </ToggleButtonGroup>
         </div>
       </Navigation>
     </ThemeProvider>

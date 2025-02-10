@@ -1,8 +1,8 @@
 import { createTheme, ThemeOptions } from '@mui/material'
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface TypeBackground {
-    navbar: string; // Add custom navbar background color
+    navbar: string // Add custom navbar background color
   }
 }
 
@@ -19,9 +19,9 @@ const primaryThemeOptions: ThemeOptions = {
     divider: '#B89B9B',
     action: {
       hover: '#A3788D',
-      hoverOpacity: 0.3, 
-      disabled: '#A38C87', 
-    }
+      hoverOpacity: 0.3,
+      disabled: '#A38C87',
+    },
   },
   typography: {
     body1: {

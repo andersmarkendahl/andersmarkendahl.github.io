@@ -1,16 +1,8 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
-import { useState } from 'react'
-import {
-  CssBaseline,
-  Stack,
-  Typography,
-  ThemeProvider,
-  ToggleButtonGroup,
-  ToggleButton,
-} from '@mui/material'
+import { CssBaseline, Stack, Typography, ThemeProvider } from '@mui/material'
 import { profileImg } from './sections/images'
-import { primaryTheme, secondaryTheme } from './components/Theme'
+import { primaryTheme } from './components/Theme'
 import { Navigation } from './components/Navigation'
 import { Contact } from './sections/Contact'
 import { Server } from './sections/Server'
@@ -18,16 +10,8 @@ import { Github } from './sections/Github'
 import { Skills } from './sections/Skills'
 import { Myself } from './sections/Myself'
 
-export const App = () => {
-  const [currentTheme, setCurrentTheme] = useState(primaryTheme)
-
-  const toggleTheme = () => {
-    const newTheme = currentTheme === primaryTheme ? secondaryTheme : primaryTheme
-    setCurrentTheme(newTheme)
-  }
-
-  return (
-    <ThemeProvider theme={currentTheme}>
+export const App = () => (
+    <ThemeProvider theme={primaryTheme}>
       <CssBaseline />
       <div
         css={{
@@ -75,9 +59,7 @@ export const App = () => {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-        >
-        </div>
+        />
       </Navigation>
     </ThemeProvider>
   )
-}

@@ -1,156 +1,107 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import { useState } from 'react'
-import {
-  Modal,
-  IconButton,
-  ImageList,
-  ImageListItem,
-  ImageListItemBar,
-  Typography,
-  useTheme,
-} from '@mui/material'
-import LaunchIcon from '@mui/icons-material/Launch'
+import { Modal, Fade, Grid, Card, CardContent, Typography, useTheme } from '@mui/material'
+import { SvgIconComponent } from '@mui/icons-material'
+import BuildIcon from '@mui/icons-material/Build'
+import CodeIcon from '@mui/icons-material/Code'
+import CloudIcon from '@mui/icons-material/Cloud'
 import { Section } from '../components/Section'
-import { cicdImg, programImg, linuxImg, iplbImg, agileImg } from './images'
 
 interface SkillItem {
   title: string
-  subtitle: string
-  img: string
+  icon: SvgIconComponent // Enforces a valid Material-UI icon
   description: string
 }
+
 const skillsData: SkillItem[] = [
   {
-    img: agileImg,
-    title: 'Agile',
-    subtitle: 'Agile methodologies, roles and tools',
+    icon: BuildIcon,
+    title: 'Software Build & Deployment',
     description:
-      'I have been working with Agile software development using Kanban or Scrum for +10 years. For the last 5+ years my role have been Agile Product Owner and Product Manager and before that I worked as Scrum Master (+4 years). I have most experience in software such as JIRA, Miro',
+      'I have extensive experience in setting up and managing build and deployment pipelines across various platforms. My strongest expertise lies in Jenkins, where I have designed and maintained complex CI/CD workflows. I am also proficient with GitHub Actions and Helmchart integrations for Kubernetes deployments. Additionally, I have worked with AWS CodePipeline, Azure DevOps, and CircleCI, giving me a broad perspective on different automation tools and best practices.',
   },
   {
-    img: programImg,
-    title: 'Coding',
-    subtitle: 'Programming languages',
-    description:
-      'During my professional career I have delivered software in languages C, Golang and React on Typescript. I have also extensive experience writing scripts (Shell or Node.js) for utility, builds and test.',
-  },
-  {
-    img: cicdImg,
-    title: 'CICD',
-    subtitle: 'Continous Integration and Deployment',
-    description:
-      'Historically I have worked with large organizations migrating from a waterfall model to full CI/CD development pipelines including integration with customer. In later years my experience includes improving performance and reducing cost of existing pipelines. Software I have worked with includes Jenkins, Github Actions, AWS CodePipeline and I also possess basic knowledge of CircleCI.',
-  },
-  {
-    img: iplbImg,
-    title: 'Network',
-    subtitle: 'IP Networking, Connectivity and Loadbalancing',
+    icon: CloudIcon,
+    title: 'Networking and Infrastructure',
     description:
       'I have worked with software loadbalancers for network traffic in OSI Layers 3/4/7. The software I have developed also includes external connectivity interacting with Routers and Data Center Gateways using protocols such as BGP, OSPF and BFD. Routing software suites I have integrated includes Quagga/Zebra and BIRD.',
   },
   {
-    img: linuxImg,
-    title: 'Linux',
-    subtitle: 'Linux and Linux distributions',
+    icon: CodeIcon,
+    title: 'Programming languages',
     description:
-      'I have deployed production grade software on multiple Linux distributions including Ubuntu, SLES, Redhat and CentOS. I have directly been managing Ubuntu based servers for many years. I also possess knowledge about Linux file structure and basic knowledge of the Linux kernel.',
+      'While I no longer work as a developer, I have a broad background in programming and continue to expand my knowledge as a technical product manager.  During my time as a developer, I primarily worked with C, Golang, and React with TypeScript. I also have extensive experience writing shell scripts (Bash, sh, zsh) for build automation and utilities. In my spare time, I have explored the Unity game engine and C# scripting, as well as basic SQL.',
   },
 ]
 
-interface ModalContentProps {
-  img: string
-  title: string
-  description: string
-}
-
-const ModalContent = ({ img, title, description }: ModalContentProps) => {
-  const { palette } = useTheme()
-  return (
-    <div
-      css={{
-        justifyContent: 'center',
-        alignItems: 'center',
-        textAlign: 'center',
-        width: '600px',
-        backgroundColor: `${palette.background.paper}`,
-        border: `4px solid ${palette.secondary.main}`,
-        borderRadius: '8px',
-        padding: '32px',
-      }}
-    >
-      <img src={img} alt={title} loading='lazy' />
-      <div css={{ marginTop: '8px', marginBottom: '16px' }}>
-        <Typography variant='h3'>{title}</Typography>
-      </div>
-      <Typography>{description}</Typography>
-    </div>
-  )
-}
-
 const SkillList = () => {
   const { palette } = useTheme()
-  const [selectedImage, setSelectedImage] = useState<SkillItem | null>(null)
-  const handleOpen = (item: SkillItem) => {
-    setSelectedImage(item)
-  }
-  const handleClose = () => {
-    setSelectedImage(null)
-  }
+  const [selectedSkill, setSelectedSkill] = useState<SkillItem | null>(null)
 
   return (
-    <ImageList cols={3} gap={32}>
+    <Grid container spacing={3}>
       {skillsData.map((item) => (
-        <ImageListItem sx={{ opacity: 0.8 }} key={item.title}>
-          <img
-            src={item.img}
-            srcSet={`${item.img}?w=2x`}
-            alt={item.title}
-            loading='lazy'
-            // Could not override this when using ImageList
-            style={{ objectFit: 'contain' }}
-          />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={item.subtitle}
-            actionIcon={
-              <IconButton onClick={() => handleOpen(item)} color='primary'>
-                <LaunchIcon fontSize='large' />
-              </IconButton>
-            }
-          />
-          {selectedImage === item && (
-            <Modal
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
+        <Grid item xs={12} sm={6} md={4} key={item.title}>
+          <Card
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%',
+              padding: 2,
+              textAlign: 'center',
+              cursor: 'pointer',
+            }}
+            onClick={() => setSelectedSkill(item)}
+          >
+            <item.icon fontSize='large' />
+            <CardContent>
+              <Typography variant='h6'>{item.title}</Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+      ))}
+      {selectedSkill && (
+        <Modal
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: `${palette.background.default}80`,
+          }}
+          open
+          onClose={() => setSelectedSkill(null)}
+          disableAutoFocus
+        >
+          <Fade in={Boolean(selectedSkill)} timeout={1000}>
+            <div
+              css={{
                 justifyContent: 'center',
-                backgroundColor: `${palette.background.default}80`,
-              }}
-              open
-              onClose={handleClose}
-              slotProps={{
-                backdrop: {
-                  timeout: 500,
-                },
+                alignItems: 'center',
+                textAlign: 'center',
+                width: '600px',
+                backgroundColor: `${palette.background.paper}`,
+                borderRadius: '8px',
+                padding: '32px',
               }}
             >
-              <ModalContent img={item.img} title={item.subtitle} description={item.description} />
-            </Modal>
-          )}
-        </ImageListItem>
-      ))}
-    </ImageList>
+              <Typography variant='h3'>{selectedSkill.title}</Typography>
+              <Typography>{selectedSkill.description}</Typography>
+            </div>
+          </Fade>
+        </Modal>
+      )}
+    </Grid>
   )
 }
 
 export const Content = () => (
   <div>
-    <div css={{ marginBottom: '8px' }}>
-      <Typography variant='body1'>
-        A list of skills and topics that I have learned during my time in software development
-      </Typography>
-    </div>
+    <Typography variant='body1'>
+      A list of skills and topics that I have learned during my time in software development
+    </Typography>
     <SkillList />
   </div>
 )

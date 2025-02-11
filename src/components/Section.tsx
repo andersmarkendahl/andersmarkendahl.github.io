@@ -4,7 +4,7 @@ import { ReactNode } from 'react'
 import { Divider, Typography } from '@mui/material'
 
 const SectionHeader = ({ title }: { title: string }) => (
-  <div css={{ marginBottom: '8px', maxWidth: '300px' }}>
+  <div css={{ marginBottom: '8px', maxWidth: '200px' }}>
     <Typography variant='h4'>{title}</Typography>
     <Divider sx={{ width: '100%', borderBottomWidth: 4 }} orientation='horizontal' />
   </div>

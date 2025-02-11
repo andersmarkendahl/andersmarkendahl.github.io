@@ -29,7 +29,7 @@ export const App = () => (
             container
             rowSpacing={4}
             columnSpacing={0}
-            alignItems="left"
+            alignItems="center"
             justifyContent="flex-start"
             sx={{
               flexDirection: { xs: 'column', sm: 'row' }, // Stacked on xs, side-by-side on sm+

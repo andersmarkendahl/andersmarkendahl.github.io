@@ -1,4 +1,4 @@
-import { createTheme, ThemeOptions } from '@mui/material'
+import { createTheme, ThemeOptions, responsiveFontSizes } from '@mui/material'
 
 declare module '@mui/material/styles' {
   interface TypeBackground {
@@ -6,7 +6,30 @@ declare module '@mui/material/styles' {
   }
 }
 
-const primaryThemeOptions: ThemeOptions = {
+const themeOptions: ThemeOptions = {
+  typography: {
+    fontSize: 16,
+    h1: {
+      fontSize: '3rem',
+      '@media (max-width:600px)': { fontSize: '2.5rem' },
+    },
+    h2: {
+      fontSize: '2.5rem',
+      '@media (max-width:600px)': { fontSize: '2rem' },
+    },
+    h3: {
+      fontSize: '2rem',
+      '@media (max-width:600px)': { fontSize: '1.75rem' },
+    },
+    body1: {
+      fontSize: '1.125rem', // Slightly larger body text
+      '@media (max-width:600px)': { fontSize: '1rem' },
+    },
+    body2: {
+      fontSize: '1rem',
+      '@media (max-width:600px)': { fontSize: '0.9rem' },
+    },
+  },
   palette: {
     primary: { main: '#85586F' },
     secondary: { main: '#D8B4A0' },
@@ -23,20 +46,6 @@ const primaryThemeOptions: ThemeOptions = {
       disabled: '#A38C87',
     },
   },
-  typography: {
-    body1: {
-      fontSize: '1.5rem',
-    },
-    h1: {
-      fontSize: '3rem',
-    },
-    h2: {
-      fontSize: '2.2rem',
-    },
-    h3: {
-      fontSize: '1.7rem',
-    },
-  },
   components: {
     MuiTooltip: {
       styleOverrides: {
@@ -46,29 +55,9 @@ const primaryThemeOptions: ThemeOptions = {
         },
       },
     },
-    MuiImageListItemBar: {
-      styleOverrides: {
-        title: {
-          fontSize: '1.3em',
-          lineHeight: '1.3',
-        },
-        subtitle: {
-          fontSize: '1.1em',
-          lineHeight: '1.1',
-        },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        text: {
-          fontSize: '1.3rem',
-        },
-      },
-    },
     MuiAlert: {
       styleOverrides: {
         standardWarning: {
-          fontSize: '1.3rem',
           backgroundColor: '#B89B9B', // Same as divider, soft neutral
           color: '#3E3232', // Same as text.primary
         },
@@ -77,50 +66,4 @@ const primaryThemeOptions: ThemeOptions = {
   },
 }
 
-// Secondary theme inherits all settings and then overrides specifics
-const secondaryThemeOptions: ThemeOptions = {
-  ...primaryThemeOptions,
-
-  palette: {
-    ...primaryThemeOptions.palette,
-
-    primary: {
-      main: '#dbc8da',
-    },
-    secondary: {
-      main: '#665866',
-    },
-    background: {
-      default: '#000000',
-      paper: '#1a0014',
-    },
-    text: {
-      primary: '#dbc8da',
-    },
-    divider: '#443d45',
-    action: {
-      hover: '#665866',
-      hoverOpacity: 0.3,
-      disabled: '#443d45',
-    },
-  },
-  typography: {
-    ...primaryThemeOptions.typography,
-    fontFamily: `"Baskerville", "Cambria", "Times New Roman", "Georgia"`,
-    fontWeightRegular: 'bold',
-  },
-  components: {
-    ...primaryThemeOptions.components,
-
-    MuiTooltip: {
-      styleOverrides: {
-        tooltip: {
-          color: '#dbc8da',
-        },
-      },
-    },
-  },
-}
-
-export const primaryTheme = createTheme(primaryThemeOptions)
-export const secondaryTheme = createTheme(secondaryThemeOptions)
+export const theme = responsiveFontSizes(createTheme(themeOptions))

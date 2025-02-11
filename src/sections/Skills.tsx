@@ -2,14 +2,13 @@
 import { jsx } from '@emotion/react'
 import { useState } from 'react'
 import { Modal, Fade, Grid, Card, CardContent, Typography, useTheme } from '@mui/material'
-import { Section } from '../components/Section'
 import { SvgIconComponent } from '@mui/icons-material'
 import BuildIcon from '@mui/icons-material/Build'
 import CodeIcon from '@mui/icons-material/Code'
 import CloudIcon from '@mui/icons-material/Cloud'
 import GroupIcon from '@mui/icons-material/Group'
 import DashboardIcon from '@mui/icons-material/Dashboard'
-
+import { Section } from '../components/Section'
 
 interface SkillItem {
   title: string
@@ -51,14 +50,14 @@ const skillsData: SkillItem[] = [
 ]
 
 interface SkillModalProps {
-  selectedSkill: SkillItem | null;
-  onClose: () => void;
+  selectedSkill: SkillItem | null
+  onClose: () => void
 }
 
-const SkillModal = ({ selectedSkill, onClose } : SkillModalProps) => {
-  const { palette } = useTheme();
+const SkillModal = ({ selectedSkill, onClose }: SkillModalProps) => {
+  const { palette } = useTheme()
 
-  if (!selectedSkill) return null;
+  if (!selectedSkill) return null
 
   return (
     <Modal
@@ -94,17 +93,17 @@ const SkillModal = ({ selectedSkill, onClose } : SkillModalProps) => {
             }}
           >
             <selectedSkill.icon sx={{ fontSize: '2.5rem' }} />
-            <Typography variant="h2">{selectedSkill.title}</Typography>
+            <Typography variant='h2'>{selectedSkill.title}</Typography>
           </div>
           <Typography>{selectedSkill.description}</Typography>
         </div>
       </Fade>
     </Modal>
-  );
-};
+  )
+}
 
 const SkillList = () => {
-  const [selectedSkill, setSelectedSkill] = useState<SkillItem | null>(null);
+  const [selectedSkill, setSelectedSkill] = useState<SkillItem | null>(null)
 
   return (
     <Grid container spacing={3}>
@@ -136,9 +135,8 @@ const SkillList = () => {
       ))}
       <SkillModal selectedSkill={selectedSkill} onClose={() => setSelectedSkill(null)} />
     </Grid>
-  );
-};
-
+  )
+}
 
 export const Content = () => (
   <div>

@@ -50,15 +50,19 @@ const SkillList = () => {
               alignItems: 'center',
               justifyContent: 'center',
               height: '100%',
-              padding: 2,
+              padding: 4,
               textAlign: 'center',
-              cursor: 'pointer',
+              transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+              '&:hover': {
+                transform: 'scale(1.05)',
+                boxShadow: 6,
+              },
             }}
             onClick={() => setSelectedSkill(item)}
           >
-            <item.icon fontSize='large' />
+            <item.icon sx={{ fontSize: '6rem' }} />
             <CardContent>
-              <Typography variant='h6'>{item.title}</Typography>
+              <Typography variant='h5'>{item.title}</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -100,7 +104,7 @@ const SkillList = () => {
 export const Content = () => (
   <div>
     <Typography variant='body1'>
-      A list of skills and topics that I have learned during my time in software development
+      Click on a Card to read more about my experience in the specific area.
     </Typography>
     <SkillList />
   </div>

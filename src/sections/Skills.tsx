@@ -50,9 +50,61 @@ const skillsData: SkillItem[] = [
   },
 ]
 
+interface SkillModalProps {
+  selectedSkill: SkillItem | null;
+  onClose: () => void;
+}
+
+const SkillModal = ({ selectedSkill, onClose } : SkillModalProps) => {
+  const { palette } = useTheme();
+
+  if (!selectedSkill) return null;
+
+  return (
+    <Modal
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: `${palette.background.default}80`,
+      }}
+      open
+      onClose={onClose}
+      disableAutoFocus
+    >
+      <Fade in timeout={1000}>
+        <div
+          css={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            width: '600px',
+            backgroundColor: `${palette.background.paper}`,
+            borderRadius: '8px',
+            padding: '32px',
+          }}
+        >
+          <div
+            css={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              marginBottom: '16px',
+            }}
+          >
+            <selectedSkill.icon sx={{ fontSize: '2.5rem' }} />
+            <Typography variant="h2">{selectedSkill.title}</Typography>
+          </div>
+          <Typography>{selectedSkill.description}</Typography>
+        </div>
+      </Fade>
+    </Modal>
+  );
+};
+
 const SkillList = () => {
-  const { palette } = useTheme()
-  const [selectedSkill, setSelectedSkill] = useState<SkillItem | null>(null)
+  const [selectedSkill, setSelectedSkill] = useState<SkillItem | null>(null);
 
   return (
     <Grid container spacing={3}>
@@ -82,51 +134,11 @@ const SkillList = () => {
           </Card>
         </Grid>
       ))}
-      {selectedSkill && (
-        <Modal
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: `${palette.background.default}80`,
-          }}
-          open
-          onClose={() => setSelectedSkill(null)}
-          disableAutoFocus
-        >
-          <Fade in={Boolean(selectedSkill)} timeout={1000}>
-            <div
-              css={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                textAlign: 'center',
-                width: '600px',
-                backgroundColor: `${palette.background.paper}`,
-                borderRadius: '8px',
-                padding: '32px',
-              }}
-            >
-              <div
-                css={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px', // Adds spacing between icon and text
-                  marginBottom: '16px',
-                }}
-              >
-                <selectedSkill.icon sx={{ fontSize: '2.5rem' }} />
-                <Typography variant="h2">{selectedSkill.title}</Typography>
-              </div>
-              <Typography>{selectedSkill.description}</Typography>
-            </div>
-          </Fade>
-        </Modal>
-
-      )}
+      <SkillModal selectedSkill={selectedSkill} onClose={() => setSelectedSkill(null)} />
     </Grid>
-  )
-}
+  );
+};
+
 
 export const Content = () => (
   <div>

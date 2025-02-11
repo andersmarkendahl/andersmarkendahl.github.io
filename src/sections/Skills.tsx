@@ -2,11 +2,14 @@
 import { jsx } from '@emotion/react'
 import { useState } from 'react'
 import { Modal, Fade, Grid, Card, CardContent, Typography, useTheme } from '@mui/material'
+import { Section } from '../components/Section'
 import { SvgIconComponent } from '@mui/icons-material'
 import BuildIcon from '@mui/icons-material/Build'
 import CodeIcon from '@mui/icons-material/Code'
 import CloudIcon from '@mui/icons-material/Cloud'
-import { Section } from '../components/Section'
+import GroupIcon from '@mui/icons-material/Group'
+import DashboardIcon from '@mui/icons-material/Dashboard'
+
 
 interface SkillItem {
   title: string
@@ -15,6 +18,18 @@ interface SkillItem {
 }
 
 const skillsData: SkillItem[] = [
+  {
+    icon: GroupIcon,
+    title: 'Agile Leadership',
+    description:
+      'With over 10 years in Agile environments, I have +4 years of experience as a Scrum Master and +6 years as a Product Manager. My work has involved coaching teams, facilitating Agile ceremonies, and working closely with internal and external stakeholders to align product strategy with business needs.',
+  },
+  {
+    icon: DashboardIcon,
+    title: 'Project & Tooling',
+    description:
+      'I have extensive experience administering the Atlassian product suite, including JIRA and Confluence, as well as using Notion for documentation and knowledge sharing. Additionally, I see great value in visual collaboration and frequently work with tools like Miro and Microsoft Whiteboard.',
+  },
   {
     icon: BuildIcon,
     title: 'Software Build & Deployment',
@@ -25,7 +40,7 @@ const skillsData: SkillItem[] = [
     icon: CloudIcon,
     title: 'Networking and Infrastructure',
     description:
-      'I have worked with software loadbalancers for network traffic in OSI Layers 3/4/7. The software I have developed also includes external connectivity interacting with Routers and Data Center Gateways using protocols such as BGP, OSPF and BFD. Routing software suites I have integrated includes Quagga/Zebra and BIRD.',
+      'I have experience developing software load balancers for network traffic at OSI Layers 3, 4, and 7. My work includes integrating external connectivity with routers and data center gateways using protocols such as BGP, OSPF, and BFD. Additionally, I have worked with routing software suites like Quagga/Zebra and BIRD.',
   },
   {
     icon: CodeIcon,
@@ -62,7 +77,7 @@ const SkillList = () => {
           >
             <item.icon sx={{ fontSize: '6rem' }} />
             <CardContent>
-              <Typography variant='h5'>{item.title}</Typography>
+              <Typography variant='h6'>{item.title}</Typography>
             </CardContent>
           </Card>
         </Grid>
@@ -82,7 +97,8 @@ const SkillList = () => {
           <Fade in={Boolean(selectedSkill)} timeout={1000}>
             <div
               css={{
-                justifyContent: 'center',
+                display: 'flex',
+                flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
                 width: '600px',
@@ -91,11 +107,22 @@ const SkillList = () => {
                 padding: '32px',
               }}
             >
-              <Typography variant='h3'>{selectedSkill.title}</Typography>
+              <div
+                css={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px', // Adds spacing between icon and text
+                  marginBottom: '16px',
+                }}
+              >
+                <selectedSkill.icon sx={{ fontSize: '2.5rem' }} />
+                <Typography variant="h2">{selectedSkill.title}</Typography>
+              </div>
               <Typography>{selectedSkill.description}</Typography>
             </div>
           </Fade>
         </Modal>
+
       )}
     </Grid>
   )
@@ -104,7 +131,7 @@ const SkillList = () => {
 export const Content = () => (
   <div>
     <Typography variant='body1'>
-      Click on a Card to read more about my experience in the specific area.
+      Click a card to learn more about my experience in that area.
     </Typography>
     <SkillList />
   </div>

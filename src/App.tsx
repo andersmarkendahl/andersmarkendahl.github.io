@@ -25,7 +25,7 @@ export const App = () => (
       }}
     >
       <Stack spacing={12}>
-        <Profile />
+        <Profile id='home' />
         <Myself id='about' />
         <Skills id='skills' />
         <Github id='projects' />

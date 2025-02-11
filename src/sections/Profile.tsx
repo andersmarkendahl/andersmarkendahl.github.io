@@ -4,7 +4,7 @@ import { Grid, Typography } from '@mui/material'
 import { profileImg } from './images'
 import { theme } from '../components/Theme'
 
-export const Profile = () => (
+const Content = () => (
   <Grid
     container
     rowSpacing={4}
@@ -48,4 +48,10 @@ export const Profile = () => (
       </div>
     </Grid>
   </Grid>
+)
+
+export const Profile = ({ id }: { id: string }) => (
+  <div id={id}>
+    <Content />
+  </div>
 )

@@ -7,29 +7,6 @@ declare module '@mui/material/styles' {
 }
 
 const themeOptions: ThemeOptions = {
-  typography: {
-    fontSize: 16,
-    h1: {
-      fontSize: '3rem',
-      '@media (max-width:600px)': { fontSize: '2.5rem' },
-    },
-    h2: {
-      fontSize: '2.5rem',
-      '@media (max-width:600px)': { fontSize: '2rem' },
-    },
-    h3: {
-      fontSize: '2rem',
-      '@media (max-width:600px)': { fontSize: '1.75rem' },
-    },
-    body1: {
-      fontSize: '1.125rem', // Slightly larger body text
-      '@media (max-width:600px)': { fontSize: '1rem' },
-    },
-    body2: {
-      fontSize: '1rem',
-      '@media (max-width:600px)': { fontSize: '0.9rem' },
-    },
-  },
   palette: {
     primary: { main: '#85586F' },
     secondary: { main: '#D8B4A0' },

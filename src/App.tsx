@@ -19,22 +19,9 @@ export const App = () => (
           alignItems: 'center',
           justifyContent: 'center',
           margin: '32px auto 160px auto',
-          padding: '0 16px',
-          minWidth: '320px',
-          maxWidth: '1200px',
-          // Simple responsiveness
-          '@media (min-width: 300px)': {
-            maxWidth: '300px',
-          },
-          '@media (min-width: 600px)': {
-            maxWidth: '600px',
-          },
-          '@media (min-width: 900px)': {
-            maxWidth: '900px',
-          },
-          '@media (min-width: 1200px)': {
-            maxWidth: '1200px',
-          },
+          padding: '0 5%',
+          width: '100%',
+          maxWidth: 'clamp(300px, 90vw, 1200px)',
         }}
       >
         <Stack spacing={12}>

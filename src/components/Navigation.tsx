@@ -30,7 +30,13 @@ export const Navigation = ({ children }: { children: ReactNode }) => {
   const navBarColor = palette.background.navbar
   const iconStyle = {
     padding: '4px',
-    fontSize: '5rem',
+    fontSize: {
+      xs: '3rem',
+      sm: '3.5rem',
+      md: '4rem',
+      lg: '5rem',
+    },
+  
   }
 
   const navigationData: Props[] = [

@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
 import { CssBaseline, Stack, ThemeProvider } from '@mui/material'
-import './global.css';
+import './global.css'
 import { theme } from './components/Theme'
 import { Navigation } from './components/Navigation'
 import { Contact } from './sections/Contact'

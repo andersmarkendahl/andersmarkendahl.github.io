@@ -14,7 +14,6 @@ const themeOptions: ThemeOptions = {
     h3: { fontFamily: 'IBM Plex Mono, Roboto, sans-serif', fontWeight: 600 },
     h4: { fontFamily: 'IBM Plex Mono, Roboto, sans-serif', fontWeight: 600 },
     h5: { fontFamily: 'IBM Plex Mono, Roboto, sans-serif', fontWeight: 600 },
-
   },
   palette: {
     primary: { main: '#85586F' },

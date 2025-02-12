@@ -7,6 +7,13 @@ declare module '@mui/material/styles' {
 }
 
 const themeOptions: ThemeOptions = {
+  typography: {
+    fontFamily: 'Roboto, sans-serif', // Keep body text consistent
+    h1: { fontFamily: 'IBM Plex Mono, Roboto, sans-serif', fontWeight: 600 },
+    h2: { fontFamily: 'IBM Plex Mono, Roboto, sans-serif', fontWeight: 600 },
+    h3: { fontFamily: 'IBM Plex Mono, Roboto, sans-serif', fontWeight: 600 },
+    h4: { fontFamily: 'IBM Plex Mono, Roboto, sans-serif', fontWeight: 600 },
+  },
   palette: {
     primary: { main: '#85586F' },
     secondary: { main: '#D8B4A0' },

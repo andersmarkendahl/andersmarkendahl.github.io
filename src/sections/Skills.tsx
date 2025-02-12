@@ -99,8 +99,8 @@ const SkillModal = ({ selectedSkill, onClose }: SkillModalProps) => {
               marginBottom: '16px',
             }}
           >
-            <selectedSkill.icon sx={{ fontSize: '3rem' }} />
-            <Typography variant='h4'>{selectedSkill.title}</Typography>
+            <selectedSkill.icon sx={{ fontSize: '3rem', color: 'primary.main' }} />
+            <Typography variant='h5'>{selectedSkill.title}</Typography>
           </div>
           <Typography>{selectedSkill.description}</Typography>
         </div>
@@ -133,7 +133,7 @@ const SkillList = () => {
             }}
             onClick={() => setSelectedSkill(item)}
           >
-            <item.icon sx={{ fontSize: '6rem' }} />
+            <item.icon sx={{ fontSize: '6rem', color: 'primary.main' }} />
             <CardContent>
               <Typography variant='h6'>{item.title}</Typography>
             </CardContent>

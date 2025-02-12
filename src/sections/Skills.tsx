@@ -6,8 +6,9 @@ import { SvgIconComponent } from '@mui/icons-material'
 import CloudSyncIcon from '@mui/icons-material/CloudSync'
 import CodeIcon from '@mui/icons-material/Code'
 import LanIcon from '@mui/icons-material/Lan'
-import GroupIcon from '@mui/icons-material/Group'
+import HubIcon from '@mui/icons-material/Hub'
 import DashboardIcon from '@mui/icons-material/Dashboard'
+import DesignServicesIcon from '@mui/icons-material/DesignServices'
 import { Section } from '../components/Section'
 
 interface SkillItem {
@@ -18,16 +19,16 @@ interface SkillItem {
 
 const skillsData: SkillItem[] = [
   {
-    icon: GroupIcon,
-    title: 'Agile Leadership',
+    icon: HubIcon, // Represents product development & technical execution
+    title: 'Technical Product Manager',
     description:
-      'With over 10 years in Agile environments, I have +4 years of experience as a Scrum Master and +6 years as a Product Manager. My work has involved coaching teams, facilitating Agile ceremonies, and working closely with internal and external stakeholders to align product strategy with business needs.',
+      'I have +6 years of experience as a Technical Product Manager, specializing in defining and delivering software products in complex technical domains. My expertise lies in bridging the gap between engineering and business, translating technical challenges into actionable strategies. I work closely with developers, UX designers, and stakeholders to shape roadmaps, prioritize features, and drive execution. My background as a Scrum Master and Agile Coach has given me a strong foundation in facilitating teams, improving workflows, and fostering collaboration.',
   },
   {
     icon: DashboardIcon,
     title: 'Project & Tooling',
     description:
-      'I have extensive experience administering the Atlassian product suite, including JIRA and Confluence, as well as using Notion for documentation and knowledge sharing. Additionally, I see great value in visual collaboration and frequently work with tools like Miro and Microsoft Whiteboard.',
+      'I have extensive experience administering the Atlassian product suite, including JIRA and Confluence, as well as using Notion for documentation and knowledge sharing. I frequently work with tools like Miro and Microsoft Whiteboard to facilitate brainstorming, planning, and collaboration across cross-functional teams.',
   },
   {
     icon: CloudSyncIcon,
@@ -36,18 +37,26 @@ const skillsData: SkillItem[] = [
       'I have extensive experience in setting up and managing build and deployment pipelines across various platforms. My strongest expertise lies in Jenkins, where I have designed and maintained complex CI/CD workflows. I am also proficient with GitHub Actions and Helmchart integrations for Kubernetes deployments. Additionally, I have worked with AWS CodePipeline, Azure DevOps, and CircleCI, giving me a broad perspective on different automation tools and best practices.',
   },
   {
+    icon: DesignServicesIcon,
+    title: 'User Experience & Product Design',
+    description:
+      'I have worked closely with UX designers, art directors, and frontend engineers to create visually appealing and user-friendly experiences. While I am not a designer, I enjoy contributing to user flows and UI structures, and I find it fun to experiment with layouts and interactions. I also have basic experience working in Figma to create prototypes and refine design concepts.',
+  },
+  {
     icon: LanIcon,
-    title: 'Networking and Infrastructure',
+    title: 'Networking & Infrastructure',
     description:
       'I have experience developing software load balancers for network traffic at OSI Layers 3, 4, and 7. My work includes integrating external connectivity with routers and data center gateways using protocols such as BGP, OSPF, and BFD. Additionally, I have worked with routing software suites like Quagga/Zebra and BIRD.',
   },
   {
     icon: CodeIcon,
-    title: 'Programming languages',
+    title: 'Technical Expertise & Development',
     description:
-      'While I no longer work as a developer, I have a broad background in programming and continue to expand my knowledge as a technical product manager.  During my time as a developer, I primarily worked with C, Golang, and React with TypeScript. I also have extensive experience writing shell scripts (Bash, sh, zsh) for build automation and utilities. In my spare time, I have explored the Unity game engine and C# scripting, as well as basic SQL.',
+      'While I no longer work as a full-time developer, I have a strong technical background that enables me to be hands-on as a Technical Product Manager. I have experience coding in C, Golang, and React with TypeScript, as well as writing shell scripts for build automation. I stay engaged with modern development practices and continue exploring technologies in my free time, such as Unity game engine and C# scripting.',
   },
+
 ]
+
 
 interface SkillModalProps {
   selectedSkill: SkillItem | null

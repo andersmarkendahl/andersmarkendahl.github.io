@@ -3,9 +3,9 @@ import { jsx } from '@emotion/react'
 import { useState } from 'react'
 import { Modal, Fade, Grid, Card, CardContent, Typography, useTheme } from '@mui/material'
 import { SvgIconComponent } from '@mui/icons-material'
-import BuildIcon from '@mui/icons-material/Build'
+import CloudSyncIcon from '@mui/icons-material/CloudSync'
 import CodeIcon from '@mui/icons-material/Code'
-import CloudIcon from '@mui/icons-material/Cloud'
+import LanIcon from '@mui/icons-material/Lan'
 import GroupIcon from '@mui/icons-material/Group'
 import DashboardIcon from '@mui/icons-material/Dashboard'
 import { Section } from '../components/Section'
@@ -30,13 +30,13 @@ const skillsData: SkillItem[] = [
       'I have extensive experience administering the Atlassian product suite, including JIRA and Confluence, as well as using Notion for documentation and knowledge sharing. Additionally, I see great value in visual collaboration and frequently work with tools like Miro and Microsoft Whiteboard.',
   },
   {
-    icon: BuildIcon,
+    icon: CloudSyncIcon,
     title: 'Software Build & Deployment',
     description:
       'I have extensive experience in setting up and managing build and deployment pipelines across various platforms. My strongest expertise lies in Jenkins, where I have designed and maintained complex CI/CD workflows. I am also proficient with GitHub Actions and Helmchart integrations for Kubernetes deployments. Additionally, I have worked with AWS CodePipeline, Azure DevOps, and CircleCI, giving me a broad perspective on different automation tools and best practices.',
   },
   {
-    icon: CloudIcon,
+    icon: LanIcon,
     title: 'Networking and Infrastructure',
     description:
       'I have experience developing software load balancers for network traffic at OSI Layers 3, 4, and 7. My work includes integrating external connectivity with routers and data center gateways using protocols such as BGP, OSPF, and BFD. Additionally, I have worked with routing software suites like Quagga/Zebra and BIRD.',
@@ -92,8 +92,8 @@ const SkillModal = ({ selectedSkill, onClose }: SkillModalProps) => {
               marginBottom: '16px',
             }}
           >
-            <selectedSkill.icon sx={{ fontSize: '2.5rem' }} />
-            <Typography variant='h2'>{selectedSkill.title}</Typography>
+            <selectedSkill.icon sx={{ fontSize: '3rem' }} />
+            <Typography variant='h4'>{selectedSkill.title}</Typography>
           </div>
           <Typography>{selectedSkill.description}</Typography>
         </div>

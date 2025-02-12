@@ -54,9 +54,7 @@ const skillsData: SkillItem[] = [
     description:
       'While I no longer work as a full-time developer, I have a strong technical background that enables me to be hands-on as a Technical Product Manager. I have experience coding in C, Golang, and React with TypeScript, as well as writing shell scripts for build automation. I stay engaged with modern development practices and continue exploring technologies in my free time, such as Unity game engine and C# scripting.',
   },
-
 ]
-
 
 interface SkillModalProps {
   selectedSkill: SkillItem | null

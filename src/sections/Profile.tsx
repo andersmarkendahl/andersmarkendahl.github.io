@@ -17,9 +17,7 @@ const Content = () => (
       },
     }}
   >
-    <Typography variant='h2'>
-      Anders Markendahl
-    </Typography>
+    <Typography variant='h2'>Anders Markendahl</Typography>
 
     <div
       css={{

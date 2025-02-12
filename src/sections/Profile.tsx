@@ -1,53 +1,46 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
-import { Grid, Typography } from '@mui/material'
+import { Typography } from '@mui/material'
 import { profileImg } from './images'
 import { theme } from '../components/Theme'
 
 const Content = () => (
-  <Grid
-    container
-    rowSpacing={4}
-    columnSpacing={0}
-    alignItems='center'
-    justifyContent='flex-start'
-    sx={{
-      flexDirection: { xs: 'column', sm: 'row' },
+  <div
+    css={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: '32px',
+      '@media (min-width: 600px)': {
+        flexDirection: 'row',
+        alignItems: 'center',
+      },
     }}
   >
-    <Grid item xs={12} sm={6}>
-      <Typography variant='h2' align='left'>
-        Anders Markendahl
-      </Typography>
-    </Grid>
+    <Typography variant='h2'>
+      Anders Markendahl
+    </Typography>
 
-    <Grid
-      item
-      xs={12}
-      sm={6}
-      sx={{ display: 'flex', justifyContent: { xs: 'center', sm: 'flex-start' } }}
+    <div
+      css={{
+        borderRadius: '50%',
+        overflow: 'hidden',
+        width: '300px',
+        height: '300px',
+        border: `4px solid ${theme.palette.secondary.light}`,
+        boxShadow: `0px 4px 6px ${theme.palette.action.disabled}`,
+      }}
     >
-      <div
+      <img
+        src={profileImg}
+        alt='Anders profile'
         css={{
-          borderRadius: '50%',
-          overflow: 'hidden',
-          width: '300px',
-          height: '300px',
-          border: `4px solid ${theme.palette.secondary.light}`,
-          boxShadow: `0px 4px 6px ${theme.palette.action.disabled}`,
+          width: '100%',
+          height: 'auto',
         }}
-      >
-        <img
-          src={profileImg}
-          alt='Anders profile'
-          css={{
-            width: '100%',
-            height: 'auto',
-          }}
-        />
-      </div>
-    </Grid>
-  </Grid>
+      />
+    </div>
+  </div>
 )
 
 export const Profile = ({ id }: { id: string }) => (

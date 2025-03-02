@@ -17,7 +17,17 @@ const Content = () => (
       },
     }}
   >
-    <Typography variant='h2'>Anders Markendahl</Typography>
+    <Typography
+      variant='h2'
+      css={{
+        textAlign: 'center',
+        '@media (min-width: 600px)': {
+          textAlign: 'left',
+        },
+      }}
+    >
+      Anders Markendahl
+    </Typography>
 
     <div
       css={{

@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react'
 import { useState } from 'react'
 import { Modal, Fade, Grid, Card, CardContent, Typography, useTheme } from '@mui/material'
-import { SvgIconComponent } from '@mui/icons-material'
+import { Margin, SvgIconComponent } from '@mui/icons-material'
 import CloudSyncIcon from '@mui/icons-material/CloudSync'
 import CodeIcon from '@mui/icons-material/Code'
 import LanIcon from '@mui/icons-material/Lan'
@@ -147,7 +147,7 @@ const SkillList = () => {
 
 export const Content = () => (
   <div>
-    <Typography variant='body1'>
+    <Typography variant='body1' sx={{ marginBottom: '16px' }} >
       Click a card to learn more about my experience in that area.
     </Typography>
     <SkillList />

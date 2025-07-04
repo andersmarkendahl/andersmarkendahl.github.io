@@ -10,6 +10,7 @@ import { Github } from './sections/Github'
 import { Skills } from './sections/Skills'
 import { Myself } from './sections/Myself'
 import { Profile } from './sections/Profile'
+import { Doles } from './sections/DolesDolez'
 
 export const App = () => (
   <ThemeProvider theme={theme}>
@@ -30,6 +31,7 @@ export const App = () => (
         <Myself id='about' />
         <Skills id='skills' />
         <Github id='projects' />
+        <Doles id='doles-dolez' />
         <Server id='server' />
         <Contact id='contact' />
       </Stack>

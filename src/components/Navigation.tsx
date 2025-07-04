@@ -8,6 +8,7 @@ import {
   FolderCopy as ProjectIcon,
   Storage as ServerIcon,
   Mail as ContactIcon,
+  Whatshot as MeteorIcon,
 } from '@mui/icons-material'
 
 interface Props {
@@ -42,6 +43,7 @@ export const Navigation = () => {
     { section: 'home', description: 'About Me', icon: <HomeIcon sx={iconStyle} /> },
     { section: 'skills', description: 'My Skills', icon: <SkillsIcon sx={iconStyle} /> },
     { section: 'projects', description: 'My Github', icon: <ProjectIcon sx={iconStyle} /> },
+    { section: 'doles-dolez', description: 'Doles Dolez', icon: <MeteorIcon sx={iconStyle} /> },
     { section: 'server', description: 'My Server', icon: <ServerIcon sx={iconStyle} /> },
     { section: 'contact', description: 'Contact Me', icon: <ContactIcon sx={iconStyle} /> },
   ]

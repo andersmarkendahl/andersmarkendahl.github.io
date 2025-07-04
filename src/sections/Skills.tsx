@@ -147,7 +147,7 @@ const SkillList = () => {
 
 export const Content = () => (
   <div>
-    <Typography variant='body1' sx={{ marginBottom: '16px' }} >
+    <Typography variant='body1' sx={{ marginBottom: '16px' }}>
       Click a card to learn more about my experience in that area.
     </Typography>
     <SkillList />

@@ -2,7 +2,7 @@
 import { jsx } from '@emotion/react'
 import { useState } from 'react'
 import { Modal, Fade, Grid, Card, CardContent, Typography, useTheme } from '@mui/material'
-import { Margin, SvgIconComponent } from '@mui/icons-material'
+import { SvgIconComponent } from '@mui/icons-material'
 import CloudSyncIcon from '@mui/icons-material/CloudSync'
 import CodeIcon from '@mui/icons-material/Code'
 import LanIcon from '@mui/icons-material/Lan'
